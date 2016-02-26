@@ -1,0 +1,393 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>7. Using TinyMCE templates &mdash; Mastering Plone 1.2.5a documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../about.html"/>
+    <link rel="top" title="Mastering Plone 1.2.5a documentation" href="../index.html"/>
+        <link rel="up" title="11. Mastering Plone 5: Theming" href="index.html"/>
+        <link rel="next" title="8. Advanced resources registry usage" href="adv-resource-registry.html"/>
+        <link rel="prev" title="6. Creating initial content for the theme" href="creating-initial-content-for-the-theme.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Mastering Plone
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.2.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About Mastering Plone</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">2. Installation &amp; Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plone_training_config/instructions.html">3. Installing Plone for the Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../anatomy.html">4. The Anatomy of Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../case.html">5. The Case Study</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../features.html">6. The Features of Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plone5.html">7. What&#8217;s New in Plone 5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuring_customizing.html">8. Configuring and Customizing Plone &#8220;Through The Web&#8221;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../extending.html">9. Extending Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../add-ons.html">10. Extend Plone With Add-On Packages</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">11. Mastering Plone 5: Theming</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="basic.html">1. Basic: customizing logo and CSS of default theme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ttw-advanced.html">2. TTW advanced: intro to Diazo Theming, build custom rules through the web</a></li>
+<li class="toctree-l2"><a class="reference internal" href="static-theme.html">3. Make it reproducible basic: static theme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="theme-package.html">4. Create a Plone theme python package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="creating-customizing-templates.html">5. Creating and customizing Plone templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="creating-initial-content-for-the-theme.html">6. Creating initial content for the theme</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">7. Using TinyMCE templates</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#create-your-own-tinymce-templates">Create your own TinyMCE templates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#activate-tinymce-templates-plugin">Activate TinyMCE templates plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#use-tinymce-templates-for-content-creation">Use TinyMCE templates for content creation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="adv-resource-registry.html">8. Advanced resources registry usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="adv-diazo.html">9. Advanced Diazo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="collective-jbot.html">10. Customize template on the fly: collective.jbot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="custom-components.html">11. Creating custom components</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../javascript/index.html">JavaScript for Plone Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dexterity.html">12. Dexterity I: &#8220;Through The Web&#8221;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../buildout_1.html">13. Buildout I</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eggs1.html">14. Write Your Own Add-Ons to Customize Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../export_code.html">15. Return to Dexterity: Moving contenttypes into Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../views_1.html">16. Views I</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zpt.html">17. Page Templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zpt_2.html">18. Customizing Existing Templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../views_2.html">19. Views II: A Default View for &#8220;Talk&#8221;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../views_3.html">20. Views III: A Talk List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testing.html">21. Testing in Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../behaviors_1.html">22. Behaviors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../viewlets_1.html">23. Writing Viewlets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">24. Programming Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ide.html">25. IDEs and Editors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dexterity_2.html">26. Dexterity Types II: Growing Up</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../custom_search.html">27. Custom Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../events.html">28. Turning Talks into Events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_generated_content.html">29. User Generated Content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources.html">30. Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../thirdparty_behaviors.html">31. Using Third-Party Behaviors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dexterity_3.html">32. Dexterity Types III: Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../relations.html">33. Relations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../registry.html">34. Storing Settings in the Registry and create control-panels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eggs2.html">35. Creating Reusable Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../behaviors_2.html">36. More Complex Behaviors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../viewlets_2.html">37. A Viewlet for the Votable Behavior</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reusable.html">38. Making Our Package Reusable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../embed.html">39. Using starzel.votable_behavior in ploneconf.site</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../deployment_code.html">40. Releasing Your Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../deployment_sites.html">41. Buildout II: Getting Ready for Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../frontpage.html">42. Creating a Dynamic Front Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../future_of_plone.html">43. The Future of Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../optional.html">44. Optional</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../CHANGES.html">Changelog</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Mastering Plone</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">11. Mastering Plone 5: Theming</a> &raquo;</li>
+      
+    <li>7. Using TinyMCE templates</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="using-tinymce-templates">
+<h1>7. Using TinyMCE templates<a class="headerlink" href="#using-tinymce-templates" title="Permalink to this headline">¶</a></h1>
+<p>TinyMCE has a <em>templates</em> plugin which provides an easy way to create
+complex content in TinyMCE.
+You can use that to help users to add complex content structures like
+predefined tables or content.
+The users then only need to customize this content to their needs.</p>
+<div class="section" id="create-your-own-tinymce-templates">
+<h2>Create your own TinyMCE templates<a class="headerlink" href="#create-your-own-tinymce-templates" title="Permalink to this headline">¶</a></h2>
+<p>We create a folder named <code class="docutils literal"><span class="pre">tinymce_templates</span></code> in our theme folder and put a
+file in named <code class="docutils literal"><span class="pre">content-box.html</span></code> in it:</p>
+<div class="highlight-bash"><div class="highlight"><pre>maik@planetmobile:~/develop/plone/plonetheme.tango/src/plonetheme/tango/theme
+<span class="nv">$ </span>tree tinymce_templates/
+tinymce_templates/
+└── content-box.html
+</pre></div>
+</div>
+<p>In the file <code class="docutils literal"><span class="pre">content-box.html</span></code> we put this HTML template content:</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;mceTmpl&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;row&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;box&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-lg-12&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;hr&gt;</span>
+                <span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">&quot;intro-text text-center&quot;</span><span class="nt">&gt;</span>Build a website
+                    <span class="nt">&lt;strong&gt;</span>worth visiting<span class="nt">&lt;/strong&gt;</span>
+                <span class="nt">&lt;/h2&gt;</span>
+                <span class="nt">&lt;hr&gt;</span>
+                <span class="nt">&lt;hr</span> <span class="na">class=</span><span class="s">&quot;visible-xs&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;p&gt;</span>The boxes used in this template are nested between a normal Bootstrap row and the start of your column layout. The boxes will be full-width boxes, so if you want to make them smaller then you will need to customize.<span class="nt">&lt;/p&gt;</span>
+                <span class="nt">&lt;p&gt;</span>A huge thanks to <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://join.deathtothestockphoto.com/&quot;</span> <span class="na">target=</span><span class="s">&quot;_blank&quot;</span><span class="nt">&gt;</span>Death to the Stock Photo<span class="nt">&lt;/a&gt;</span> for allowing us to use the beautiful photos that make this template really come to life. When using this template, make sure your photos are decent. Also make sure that the file size on your photos is kept to a minumum to keep load times to a minimum.<span class="nt">&lt;/p&gt;</span>
+                <span class="nt">&lt;p&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.<span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+</div>
+<p>This is the template content we will get in TinyMCE when we use this template.</p>
+</div>
+<div class="section" id="activate-tinymce-templates-plugin">
+<h2>Activate TinyMCE templates plugin<a class="headerlink" href="#activate-tinymce-templates-plugin" title="Permalink to this headline">¶</a></h2>
+<p>Now let&#8217;s activate the template plugin (the <code class="docutils literal"><span class="pre">custom_plugins</span></code> record) and
+register this template for TinyMCE (the <code class="docutils literal"><span class="pre">template</span></code> record):</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="c">&lt;!-- activate the plugin --&gt;</span>
+<span class="nt">&lt;record</span> <span class="na">name=</span><span class="s">&quot;plone.custom_plugins&quot;</span> <span class="na">interface=</span><span class="s">&quot;Products.CMFPlone.interfaces.controlpanel.ITinyMCESchema&quot;</span> <span class="na">field=</span><span class="s">&quot;custom_plugins&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;field</span> <span class="na">type=</span><span class="s">&quot;plone.registry.field.List&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;default/&gt;</span>
+        <span class="nt">&lt;description</span> <span class="na">xmlns:ns0=</span><span class="s">&quot;http://xml.zope.org/namespaces/i18n&quot;</span>
+              <span class="na">ns0:domain=</span><span class="s">&quot;plone&quot;</span>
+              <span class="na">ns0:translate=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>Enter a list of custom plugins which will be loaded in the editor. Format is pluginname|location, one per line.<span class="nt">&lt;/description&gt;</span>
+        <span class="nt">&lt;required&gt;</span>False<span class="nt">&lt;/required&gt;</span>
+        <span class="nt">&lt;title</span> <span class="na">xmlns:ns0=</span><span class="s">&quot;http://xml.zope.org/namespaces/i18n&quot;</span>
+              <span class="na">ns0:domain=</span><span class="s">&quot;plone&quot;</span>
+              <span class="na">ns0:translate=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>Custom plugins<span class="nt">&lt;/title&gt;</span>
+        <span class="nt">&lt;value_type</span> <span class="na">type=</span><span class="s">&quot;plone.registry.field.TextLine&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/field&gt;</span>
+    <span class="nt">&lt;value&gt;</span>
+        <span class="nt">&lt;element&gt;</span>template|+plone+static/components/tinymce-builded/js/tinymce/plugins/template<span class="nt">&lt;/element&gt;</span>
+    <span class="nt">&lt;/value&gt;</span>
+<span class="nt">&lt;/record&gt;</span>
+
+<span class="c">&lt;!-- register our template --&gt;</span>
+<span class="nt">&lt;record</span> <span class="na">name=</span><span class="s">&quot;plone.templates&quot;</span> <span class="na">interface=</span><span class="s">&quot;Products.CMFPlone.interfaces.controlpanel.ITinyMCESchema&quot;</span> <span class="na">field=</span><span class="s">&quot;templates&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;field</span> <span class="na">type=</span><span class="s">&quot;plone.registry.field.Text&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;default&gt;&lt;/default&gt;</span>
+    <span class="nt">&lt;description</span> <span class="na">xmlns:ns0=</span><span class="s">&quot;http://xml.zope.org/namespaces/i18n&quot;</span>
+        <span class="na">ns0:domain=</span><span class="s">&quot;plone&quot;</span>
+        <span class="na">ns0:translate=</span><span class="s">&quot;help_tinymce_templates&quot;</span><span class="nt">&gt;</span>Enter the list of templates in json format
+        http://www.tinymce.com/wiki.php/Plugin:template<span class="nt">&lt;/description&gt;</span>
+    <span class="nt">&lt;required&gt;</span>False<span class="nt">&lt;/required&gt;</span>
+    <span class="nt">&lt;title</span> <span class="na">xmlns:ns0=</span><span class="s">&quot;http://xml.zope.org/namespaces/i18n&quot;</span>
+        <span class="na">ns0:domain=</span><span class="s">&quot;plone&quot;</span>
+        <span class="na">ns0:translate=</span><span class="s">&quot;label_tinymce_templates&quot;</span><span class="nt">&gt;</span>Templates<span class="nt">&lt;/title&gt;</span>
+  <span class="nt">&lt;/field&gt;</span>
+  <span class="nt">&lt;value&gt;</span>[{&quot;title&quot;: &quot;Content box&quot;, &quot;url&quot;: &quot;++theme++plonetheme.tango/tinymce_templates/content-box.html&quot;}]<span class="nt">&lt;/value&gt;</span>
+<span class="nt">&lt;/record&gt;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Now you need to reinstall (or import the registry profile from <code class="docutils literal"><span class="pre">portal_setup</span></code>) your package to update the registry configuration.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>You can also add the template TTW in the TinyMCE control panel by copy/pasting the following snippet:</p>
+<div class="highlight-json"><div class="highlight"><pre><span class="p">[</span>
+  <span class="p">{</span>
+   <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Content box&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;++theme++plonetheme.tango/tinymce_templates/content-box.html&quot;</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p class="last">Just remember to activate the plugin from the toolbar/plugins tab.</p>
+</div>
+</div>
+<div class="section" id="use-tinymce-templates-for-content-creation">
+<h2>Use TinyMCE templates for content creation<a class="headerlink" href="#use-tinymce-templates-for-content-creation" title="Permalink to this headline">¶</a></h2>
+<p>We can add template-based content from the <em>Insert</em> menu &gt; <em>Insert template</em>:</p>
+<img alt="../_images/theming-tinymce-insert-template.jpg" src="../_images/theming-tinymce-insert-template.jpg" />
+<p>Now we can choose one of the existing TinyMCE templates:</p>
+<img alt="../_images/theming-tinymce-choose-template.jpg" src="../_images/theming-tinymce-choose-template.jpg" />
+<p>After we have chosen our template and then clicked on <em>OK</em>,
+we have our template-based content in the editor:</p>
+<img alt="../_images/theming-tinymce-insert-template-result.jpg" src="../_images/theming-tinymce-insert-template-result.jpg" />
+<p>We can now customize it or use more templates to create more content.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="adv-resource-registry.html" class="btn btn-neutral float-right" title="8. Advanced resources registry usage" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="creating-initial-content-for-the-theme.html" class="btn btn-neutral" title="6. Creating initial content for the theme" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright The text and illustrations in this website are licensed by the Plone Foundation under a Creative Commons Attribution 4.0 International license..
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.2.5a',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .admonition-title").show();
+        $(".toggle .admonition-title").click(function() {
+            $(this).parent().children().not(".admonition-title").toggle(400);
+            $(this).parent().children(".admonition-title").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

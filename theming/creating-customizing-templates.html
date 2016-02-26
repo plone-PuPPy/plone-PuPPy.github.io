@@ -1,0 +1,443 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>5. Creating and customizing Plone templates &mdash; Mastering Plone 1.2.5a documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../about.html"/>
+    <link rel="top" title="Mastering Plone 1.2.5a documentation" href="../index.html"/>
+        <link rel="up" title="11. Mastering Plone 5: Theming" href="index.html"/>
+        <link rel="next" title="6. Creating initial content for the theme" href="creating-initial-content-for-the-theme.html"/>
+        <link rel="prev" title="4. Create a Plone theme python package" href="theme-package.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Mastering Plone
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.2.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About Mastering Plone</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">2. Installation &amp; Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plone_training_config/instructions.html">3. Installing Plone for the Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../anatomy.html">4. The Anatomy of Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../case.html">5. The Case Study</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../features.html">6. The Features of Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plone5.html">7. What&#8217;s New in Plone 5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuring_customizing.html">8. Configuring and Customizing Plone &#8220;Through The Web&#8221;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../extending.html">9. Extending Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../add-ons.html">10. Extend Plone With Add-On Packages</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">11. Mastering Plone 5: Theming</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="basic.html">1. Basic: customizing logo and CSS of default theme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ttw-advanced.html">2. TTW advanced: intro to Diazo Theming, build custom rules through the web</a></li>
+<li class="toctree-l2"><a class="reference internal" href="static-theme.html">3. Make it reproducible basic: static theme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="theme-package.html">4. Create a Plone theme python package</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">5. Creating and customizing Plone templates</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overriding-a-plone-template">Overriding a Plone template</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#overriding-event-item-template">Overriding Event Item template</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-a-new-plone-template">Creating a new Plone template</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#create-dynamic-slider-content-in-plone">Create dynamic slider content in Plone</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#take-over-the-dynamic-slider-content-from-plone">Take over the dynamic slider content from Plone</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="creating-initial-content-for-the-theme.html">6. Creating initial content for the theme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tinymce-templates.html">7. Using TinyMCE templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="adv-resource-registry.html">8. Advanced resources registry usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="adv-diazo.html">9. Advanced Diazo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="collective-jbot.html">10. Customize template on the fly: collective.jbot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="custom-components.html">11. Creating custom components</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../javascript/index.html">JavaScript for Plone Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dexterity.html">12. Dexterity I: &#8220;Through The Web&#8221;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../buildout_1.html">13. Buildout I</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eggs1.html">14. Write Your Own Add-Ons to Customize Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../export_code.html">15. Return to Dexterity: Moving contenttypes into Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../views_1.html">16. Views I</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zpt.html">17. Page Templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zpt_2.html">18. Customizing Existing Templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../views_2.html">19. Views II: A Default View for &#8220;Talk&#8221;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../views_3.html">20. Views III: A Talk List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testing.html">21. Testing in Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../behaviors_1.html">22. Behaviors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../viewlets_1.html">23. Writing Viewlets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">24. Programming Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ide.html">25. IDEs and Editors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dexterity_2.html">26. Dexterity Types II: Growing Up</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../custom_search.html">27. Custom Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../events.html">28. Turning Talks into Events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_generated_content.html">29. User Generated Content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources.html">30. Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../thirdparty_behaviors.html">31. Using Third-Party Behaviors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dexterity_3.html">32. Dexterity Types III: Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../relations.html">33. Relations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../registry.html">34. Storing Settings in the Registry and create control-panels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eggs2.html">35. Creating Reusable Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../behaviors_2.html">36. More Complex Behaviors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../viewlets_2.html">37. A Viewlet for the Votable Behavior</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reusable.html">38. Making Our Package Reusable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../embed.html">39. Using starzel.votable_behavior in ploneconf.site</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../deployment_code.html">40. Releasing Your Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../deployment_sites.html">41. Buildout II: Getting Ready for Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../frontpage.html">42. Creating a Dynamic Front Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../future_of_plone.html">43. The Future of Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../optional.html">44. Optional</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../CHANGES.html">Changelog</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Mastering Plone</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">11. Mastering Plone 5: Theming</a> &raquo;</li>
+      
+    <li>5. Creating and customizing Plone templates</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="creating-and-customizing-plone-templates">
+<h1>5. Creating and customizing Plone templates<a class="headerlink" href="#creating-and-customizing-plone-templates" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overriding-a-plone-template">
+<h2>Overriding a Plone template<a class="headerlink" href="#overriding-a-plone-template" title="Permalink to this headline">¶</a></h2>
+<p>A large part of the Plone UI is provided by BrowserView and Viewlet templates.</p>
+<p>You can see all viewlets and their managers (sortable containers) when you view
+the url <code class="docutils literal"><span class="pre">./&#64;&#64;manage-viewlets</span></code>).</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">To override them from the ZMI, you can go to <code class="docutils literal"><span class="pre">./portal_view_customizations</span></code>.</p>
+</div>
+<p>To override them from your theme product, the easiest way is to use
+<code class="docutils literal"><span class="pre">z3c.jbot</span></code> (Just a Bunch of Templates).</p>
+<p>Since jbot is already included in the <code class="docutils literal"><span class="pre">bobtemplates.plone</span></code> theme skeleton,
+you can start using it immediately by adding all the templates you want to
+override in the <code class="docutils literal"><span class="pre">src/plonetheme/tango/browser/overrides</span></code> directory.</p>
+<p>In order for jbot to match the override to the template which is being
+overridden, the name of the <em>new</em> template needs to include the
+complete path to the original template as a prefix (with every <code class="docutils literal"><span class="pre">/</span></code> replaced
+by <code class="docutils literal"><span class="pre">.</span></code>).</p>
+<p>For instance, to override <code class="docutils literal"><span class="pre">colophon.pt</span></code> from <code class="docutils literal"><span class="pre">plone.app.layout</span></code>, knowing
+that this template is found in a subfolder named <code class="docutils literal"><span class="pre">viewlets</span></code>, you need to name
+the overriding template <code class="docutils literal"><span class="pre">plone.app.layout.viewlets.colophon.pt</span></code>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">ZMI &gt; portal_view_customizations is a handy way to find the template path.</p>
+</div>
+<p>You can now restart Plone to see the effect.</p>
+<div class="section" id="overriding-event-item-template">
+<h3>Overriding Event Item template<a class="headerlink" href="#overriding-event-item-template" title="Permalink to this headline">¶</a></h3>
+<p>The path to the original template is <code class="docutils literal"><span class="pre">plone/app/event/browser/event_view.pt</span></code>,
+so the full dotted name for our replacement template should be:
+<code class="docutils literal"><span class="pre">plone.app.event.browser.event_view.pt</span></code>.
+Create a new file with this dotted name into the <code class="docutils literal"><span class="pre">overrides</span></code> folder.</p>
+<p>Let&#8217;s say we want to move the full text of the event item to appear before the
+event details block.
+To do this, we copy over the original template code and change the order of the
+two blocks:</p>
+<div class="highlight-xml"><div class="highlight"><pre>&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; xml:lang=&quot;en&quot;
+      xmlns:tal=&quot;http://xml.zope.org/namespaces/tal&quot;
+      xmlns:metal=&quot;http://xml.zope.org/namespaces/metal&quot;
+      xmlns:i18n=&quot;http://xml.zope.org/namespaces/i18n&quot;
+      lang=&quot;en&quot;
+      metal:use-macro=&quot;context/main_template/macros/master&quot;
+      i18n:domain=&quot;plone.app.event&quot;&gt;
+&lt;body&gt;
+
+&lt;metal:content-core fill-slot=&quot;content-core&quot;&gt;
+&lt;metal:block define-macro=&quot;content-core&quot;&gt;
+&lt;tal:def tal:define=&quot;data nocall:view/data&quot;&gt;
+
+  &lt;div class=&quot;event clearfix&quot; itemscope itemtype=&quot;http://data-vocabulary.org/Event&quot;&gt;
+
+    &lt;ul class=&quot;hiddenStructure&quot;&gt;
+      &lt;li&gt;&lt;a itemprop=&quot;url&quot; class=&quot;url&quot; href=&quot;&quot; tal:attributes=&quot;href data/url&quot; tal:content=&quot;data/url&quot;&gt;url&lt;/a&gt;&lt;/li&gt;
+      &lt;li itemprop=&quot;summary&quot; class=&quot;summary&quot; tal:content=&quot;data/title&quot;&gt;title&lt;/li&gt;
+      &lt;li itemprop=&quot;startDate&quot; class=&quot;dtstart&quot; tal:content=&quot;data/start/isoformat&quot;&gt;start&lt;/li&gt;
+      &lt;li itemprop=&quot;endDate&quot; class=&quot;dtend&quot; tal:content=&quot;data/end/isoformat&quot;&gt;end&lt;/li&gt;
+      &lt;li itemprop=&quot;description&quot; class=&quot;description&quot; tal:content=&quot;data/description&quot;&gt;description&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;div id=&quot;parent-fieldname-text&quot; tal:condition=&quot;data/text&quot;&gt;
+      &lt;tal:text content=&quot;structure data/text&quot; /&gt;
+    &lt;/div&gt;
+
+    &lt;tal:eventsummary replace=&quot;structure context/@@event_summary&quot;/&gt;
+
+  &lt;/div&gt;
+
+&lt;/tal:def&gt;
+&lt;/metal:block&gt;
+&lt;/metal:content-core&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre></div>
+</div>
+<p>You can now restart Plone to see the effect.</p>
+</div>
+</div>
+<div class="section" id="creating-a-new-plone-template">
+<h2>Creating a new Plone template<a class="headerlink" href="#creating-a-new-plone-template" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="create-dynamic-slider-content-in-plone">
+<h3>Create dynamic slider content in Plone<a class="headerlink" href="#create-dynamic-slider-content-in-plone" title="Permalink to this headline">¶</a></h3>
+<p>To render our dynamic content for the slider we need a custom view in Plone.
+There are various ways to create Views.
+For now, we will use a very simple template-only-view via jbot and
+<code class="docutils literal"><span class="pre">theming-plugins</span></code>.
+The <code class="docutils literal"><span class="pre">bobtemplates.plone</span></code> skeleton includes everything you need.</p>
+<p>The only thing we need to do, is to add a folder named <code class="docutils literal"><span class="pre">views</span></code> in our theme
+folder.
+Here we now create a template file named <code class="docutils literal"><span class="pre">slider-images.pt</span></code>.</p>
+<div class="highlight-bash"><div class="highlight"><pre>maik@planetmobile:~/develop/plone/plonetheme.tango/src/plonetheme/tango/theme
+<span class="nv">$ </span>tree views/
+views/
+└── slider-images.pt
+</pre></div>
+</div>
+<p>The template code looks like this:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;carousel-example-generic&quot;</span> <span class="na">class=</span><span class="s">&quot;carousel slide&quot;</span><span class="nt">&gt;</span>
+ <span class="c">&lt;!-- Indicators --&gt;</span>
+ <span class="nt">&lt;ol</span> <span class="na">class=</span><span class="s">&quot;carousel-indicators hidden-xs&quot;</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;li</span> <span class="na">tal:repeat=</span><span class="s">&quot;item context/keys&quot;</span>
+         <span class="na">data-target=</span><span class="s">&quot;#carousel-example-generic&quot;</span>
+         <span class="na">data-slide-to=</span><span class="s">&quot;${python:repeat.item.index}&quot;</span>
+         <span class="na">class=</span><span class="s">&quot;${python: repeat.item.start and &#39;active&#39; or &#39;&#39;}&quot;</span><span class="nt">&gt;&lt;/li&gt;</span>
+ <span class="nt">&lt;/ol&gt;</span>
+
+ <span class="c">&lt;!-- Wrapper for slides --&gt;</span>
+ <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;carousel-inner&quot;</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;div</span> <span class="na">tal:repeat=</span><span class="s">&quot;item context/values&quot;</span>
+         <span class="na">class=</span><span class="s">&quot;item ${python: repeat.item.start and &#39;active&#39; or &#39;&#39;}&quot;</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;img</span> <span class="na">tal:define=</span><span class="s">&quot;scales item/@@images&quot;</span>
+             <span class="na">tal:replace=</span><span class="s">&quot;structure python: scales.tag(&#39;image&#39;, scale=&#39;large&#39;, css_class=&#39;img-responsive img-full&#39;)&quot;</span> <span class="nt">/&gt;</span>
+     <span class="nt">&lt;/div&gt;</span>
+ <span class="nt">&lt;/div&gt;</span>
+
+ <span class="c">&lt;!-- Controls --&gt;</span>
+ <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;left carousel-control&quot;</span> <span class="na">href=</span><span class="s">&quot;#carousel-example-generic&quot;</span> <span class="na">data-slide=</span><span class="s">&quot;prev&quot;</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;icon-prev&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
+ <span class="nt">&lt;/a&gt;</span>
+ <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;right carousel-control&quot;</span> <span class="na">href=</span><span class="s">&quot;#carousel-example-generic&quot;</span> <span class="na">data-slide=</span><span class="s">&quot;next&quot;</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;icon-next&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
+ <span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+</div>
+<p>This is all that&#8217;s required to create a very simple template-only View.
+You can test the view now.
+For the View to show up, it needs some images to display.
+To supply the images, we can create a folder in Plone named <code class="docutils literal"><span class="pre">slider-images</span></code>
+and add some images there.
+Now we can browse to the View on this folder by visiting:
+<code class="docutils literal"><span class="pre">/slider-images/&#64;&#64;slider-images</span></code>
+This will render the markup required to render the slider.</p>
+</div>
+<div class="section" id="take-over-the-dynamic-slider-content-from-plone">
+<h3>Take over the dynamic slider content from Plone<a class="headerlink" href="#take-over-the-dynamic-slider-content-from-plone" title="Permalink to this headline">¶</a></h3>
+<p>Now that we have our <code class="docutils literal"><span class="pre">slider-images</span></code> View which renders our HTML markup for
+the slider, we need to include that on the front page.
+For that, we use Diazo&#8217;s ability to load the content from other URLs, using the
+<code class="docutils literal"><span class="pre">href</span></code> attribute:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="c">&lt;!-- dynamic slider content --&gt;</span>
+<span class="nt">&lt;replace</span>
+  <span class="na">css:theme=</span><span class="s">&quot;#carousel-example-generic&quot;</span>
+  <span class="na">css:content=</span><span class="s">&quot;#carousel-example-generic&quot;</span>
+  <span class="na">href=</span><span class="s">&quot;/slider-images/@@slider-images&quot;</span> <span class="nt">/&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="creating-initial-content-for-the-theme.html" class="btn btn-neutral float-right" title="6. Creating initial content for the theme" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="theme-package.html" class="btn btn-neutral" title="4. Create a Plone theme python package" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright The text and illustrations in this website are licensed by the Plone Foundation under a Creative Commons Attribution 4.0 International license..
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.2.5a',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .admonition-title").show();
+        $(".toggle .admonition-title").click(function() {
+            $(this).parent().children().not(".admonition-title").toggle(400);
+            $(this).parent().children(".admonition-title").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

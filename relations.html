@@ -1,0 +1,442 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>33. Relations &mdash; Mastering Plone 1.2.5a documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="about.html"/>
+    <link rel="top" title="Mastering Plone 1.2.5a documentation" href="index.html"/>
+        <link rel="next" title="34. Storing Settings in the Registry and create control-panels" href="registry.html"/>
+        <link rel="prev" title="32. Dexterity Types III: Python" href="dexterity_3.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Mastering Plone
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.2.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="about.html">About Mastering Plone</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">2. Installation &amp; Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plone_training_config/instructions.html">3. Installing Plone for the Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="anatomy.html">4. The Anatomy of Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="case.html">5. The Case Study</a></li>
+<li class="toctree-l1"><a class="reference internal" href="features.html">6. The Features of Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plone5.html">7. What&#8217;s New in Plone 5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuring_customizing.html">8. Configuring and Customizing Plone &#8220;Through The Web&#8221;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extending.html">9. Extending Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="add-ons.html">10. Extend Plone With Add-On Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="theming/index.html">11. Mastering Plone 5: Theming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="javascript/index.html">JavaScript for Plone Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dexterity.html">12. Dexterity I: &#8220;Through The Web&#8221;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="buildout_1.html">13. Buildout I</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eggs1.html">14. Write Your Own Add-Ons to Customize Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="export_code.html">15. Return to Dexterity: Moving contenttypes into Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="views_1.html">16. Views I</a></li>
+<li class="toctree-l1"><a class="reference internal" href="zpt.html">17. Page Templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="zpt_2.html">18. Customizing Existing Templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="views_2.html">19. Views II: A Default View for &#8220;Talk&#8221;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="views_3.html">20. Views III: A Talk List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="testing.html">21. Testing in Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="behaviors_1.html">22. Behaviors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="viewlets_1.html">23. Writing Viewlets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">24. Programming Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ide.html">25. IDEs and Editors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dexterity_2.html">26. Dexterity Types II: Growing Up</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom_search.html">27. Custom Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="events.html">28. Turning Talks into Events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user_generated_content.html">29. User Generated Content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">30. Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thirdparty_behaviors.html">31. Using Third-Party Behaviors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dexterity_3.html">32. Dexterity Types III: Python</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">33. Relations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#creating-relations-in-a-schema">Creating relations in a schema</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#accessing-and-displaying-related-items">Accessing and displaying related items</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-relationfields-through-the-web">Creating Relationfields through the web</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-stack">The stack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#relationvalues">RelationValues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#backrelations">Backrelations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="registry.html">34. Storing Settings in the Registry and create control-panels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eggs2.html">35. Creating Reusable Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="behaviors_2.html">36. More Complex Behaviors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="viewlets_2.html">37. A Viewlet for the Votable Behavior</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reusable.html">38. Making Our Package Reusable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embed.html">39. Using starzel.votable_behavior in ploneconf.site</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deployment_code.html">40. Releasing Your Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deployment_sites.html">41. Buildout II: Getting Ready for Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="frontpage.html">42. Creating a Dynamic Front Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="future_of_plone.html">43. The Future of Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optional.html">44. Optional</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="CHANGES.html">Changelog</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Mastering Plone</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>33. Relations</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="relations">
+<h1>33. Relations<a class="headerlink" href="#relations" title="Permalink to this headline">¶</a></h1>
+<p>You can model relationships between content items by placing them in a hierarchy (a folder <em>speakers</em> containing the (folderish) speakers and within each speaker the talks) or by linking them to each other in Richtext-Fields. But where would you store a talk that two speakers give together together?</p>
+<p>Relations allow developers to model relationships between objects without a links or a hierarchy. The behavior <code class="docutils literal"><span class="pre">plone.app.relationfield.behavior.IRelatedItems</span></code> provides the field <em>Related Items</em> in the tab <em>Categorization</em>. That field simply says <code class="docutils literal"><span class="pre">a</span></code> is somehow related to <code class="docutils literal"><span class="pre">b</span></code>.</p>
+<p>By using custom relations you can model your data in a much more meaningful way.</p>
+<div class="section" id="creating-relations-in-a-schema">
+<h2>Creating relations in a schema<a class="headerlink" href="#creating-relations-in-a-schema" title="Permalink to this headline">¶</a></h2>
+<p>Relate to one item only.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">plone.app.vocabularies.catalog</span> <span class="kn">import</span> <span class="n">CatalogSource</span>
+<span class="kn">from</span> <span class="nn">z3c.relationfield.schema</span> <span class="kn">import</span> <span class="n">RelationChoice</span>
+<span class="kn">from</span> <span class="nn">z3c.relationfield.schema</span> <span class="kn">import</span> <span class="n">RelationList</span>
+
+<span class="n">evil_mastermind</span> <span class="o">=</span> <span class="n">RelationChoice</span><span class="p">(</span>
+    <span class="n">title</span><span class="o">=</span><span class="n">_</span><span class="p">(</span><span class="s">u&#39;The Evil Masterimind&#39;</span><span class="p">),</span>
+    <span class="n">vocabulary</span><span class="o">=</span><span class="s">&#39;plone.app.vocabularies.Catalog&#39;</span><span class="p">,</span>
+    <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Relate to multiple items.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">z3c.relationfield.schema</span> <span class="kn">import</span> <span class="n">RelationChoice</span>
+<span class="kn">from</span> <span class="nn">z3c.relationfield.schema</span> <span class="kn">import</span> <span class="n">RelationList</span>
+
+<span class="n">minions</span> <span class="o">=</span> <span class="n">RelationList</span><span class="p">(</span>
+    <span class="n">title</span><span class="o">=</span><span class="n">_</span><span class="p">(</span><span class="s">u&#39;Minions&#39;</span><span class="p">),</span>
+    <span class="n">default</span><span class="o">=</span><span class="p">[],</span>
+    <span class="n">value_type</span><span class="o">=</span><span class="n">RelationChoice</span><span class="p">(</span>
+        <span class="n">vocabulary</span><span class="o">=</span><span class="s">&#39;plone.app.vocabularies.Catalog&#39;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>We can see that the <a class="reference external" href="https://github.com/plone/plone.app.relationfield/blob/master/plone/app/relationfield/behavior.py">code for the behavior IRelatedItems</a> does exactly the same.</p>
+<p>Instead of using a named vocabulary we can also use <code class="docutils literal"><span class="pre">source</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">plone.app.vocabularies.catalog</span> <span class="kn">import</span> <span class="n">CatalogSource</span>
+<span class="kn">from</span> <span class="nn">z3c.relationfield.schema</span> <span class="kn">import</span> <span class="n">RelationChoice</span>
+<span class="kn">from</span> <span class="nn">z3c.relationfield.schema</span> <span class="kn">import</span> <span class="n">RelationList</span>
+
+<span class="n">minions</span> <span class="o">=</span> <span class="n">RelationList</span><span class="p">(</span>
+    <span class="n">title</span><span class="o">=</span><span class="n">_</span><span class="p">(</span><span class="s">u&#39;Talks by this speaker&#39;</span><span class="p">),</span>
+    <span class="n">value_type</span><span class="o">=</span><span class="n">RelationChoice</span><span class="p">(</span>
+        <span class="n">title</span><span class="o">=</span><span class="n">_</span><span class="p">(</span><span class="s">u&#39;Talks&#39;</span><span class="p">),</span>
+        <span class="n">source</span><span class="o">=</span><span class="n">CatalogSource</span><span class="p">(</span><span class="n">portal_type</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;one_eyed_minion&#39;</span><span class="p">,</span> <span class="s">&#39;minion&#39;</span><span class="p">])),</span>
+    <span class="n">required</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>To <code class="docutils literal"><span class="pre">CatalogSource</span></code> you can pass the same argument that you use for catalog-queries.
+This makes it very flexible to limit relateable items by type, path, date etc.</p>
+<p>For even more flexibility you can create your own <a class="reference external" href="http://docs.plone.org/external/plone.app.dexterity/docs/advanced/vocabularies.html#dynamic-sources">dynamic vocabularies</a>.</p>
+</div>
+<div class="section" id="accessing-and-displaying-related-items">
+<h2>Accessing and displaying related items<a class="headerlink" href="#accessing-and-displaying-related-items" title="Permalink to this headline">¶</a></h2>
+<p>One would think that it would be the easiest approach to simply use the render-method of the default-widget like we did in the chapter &#8220;Views II: A Default View for “Talk”&#8221;. Sadly that is wrong. Adding the approriate code to te template:</p>
+<p>would only render the UIDs of the related items:</p>
+<p>This is not too bad since is very likely that you want to control closely how to render tese items anyway.</p>
+<p>So we add a method to the view to return the related items so that we&#8217;re able to render anyway we like.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">minions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Returns a list of brains of related items.&quot;&quot;&quot;</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">catalog</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">portal</span><span class="o">.</span><span class="n">get_tool</span><span class="p">(</span><span class="s">&#39;portal_catalog&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">rel</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">context</span><span class="o">.</span><span class="n">underlings</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">i</span><span class="o">.</span><span class="n">isBroken</span><span class="p">():</span>
+            <span class="c"># skip broken relations</span>
+            <span class="k">continue</span>
+        <span class="c"># query by path so we don&#39;t have to wake up any objects</span>
+        <span class="n">brains</span> <span class="o">=</span> <span class="n">catalog</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;query&#39;</span><span class="p">:</span> <span class="n">rel</span><span class="o">.</span><span class="n">to_path</span><span class="p">,</span> <span class="s">&#39;depth&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">})</span>
+        <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">brains</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">results</span>
+</pre></div>
+</div>
+<p>We use <code class="docutils literal"><span class="pre">rel.to_path</span></code> and use the items path to query the catalog for its catalog-entry. This is much more efficient than using <code class="docutils literal"><span class="pre">rel.to_object</span></code> since we don&#8217;t have to wake up any objects. Setting <code class="docutils literal"><span class="pre">depth</span></code> to <code class="docutils literal"><span class="pre">0</span></code> will only return items with exactly this path, so it will always return a list with one item.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Using the path sounds a little complicated and it would indeed be more convenient if a <code class="docutils literal"><span class="pre">RelationItem</span></code> would contain the <code class="docutils literal"><span class="pre">UID</span></code> (so we can query the catalog for that) or if the <code class="docutils literal"><span class="pre">portal_catalog</span></code> would index the <code class="docutils literal"><span class="pre">IntId</span></code>. But that&#8217;s the way it is for now.</p>
+</div>
+<p>For reference look at how the default viewlet displays the information for related items stored by the behavior <code class="docutils literal"><span class="pre">IRelatedItems</span></code>. See how it does exatly the same in <code class="docutils literal"><span class="pre">related2brains</span></code>.
+This is the python-path for the viewlet: <code class="docutils literal"><span class="pre">plone.app.layout.viewlets.content.ContentRelatedItems</span></code>
+This is the file-path for the template: <code class="docutils literal"><span class="pre">plone/app/layout/viewlets/document_relateditems.pt</span></code></p>
+</div>
+<div class="section" id="creating-relationfields-through-the-web">
+<h2>Creating Relationfields through the web<a class="headerlink" href="#creating-relationfields-through-the-web" title="Permalink to this headline">¶</a></h2>
+<p>It is surprisingly easy to create RelationFields through the web</p>
+<ul class="simple">
+<li>In the dexterity schema-editor add a new field and select <em>Relation List</em> or <em>Relation Choice</em>, depending on wether you want to relate to multiple items or not.</li>
+<li>When configuring the field you can even select the content-type the relation should be limited to.</li>
+</ul>
+<p>When you click on <code class="docutils literal"><span class="pre">Edit</span> <span class="pre">xml</span> <span class="pre">field</span> <span class="pre">model</span></code> you will see the fields in the xml-schema:</p>
+<p>RelationChoice:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="o">&lt;</span><span class="n">field</span> <span class="n">name</span><span class="o">=</span><span class="s">&quot;boss&quot;</span> <span class="nb">type</span><span class="o">=</span><span class="s">&quot;z3c.relationfield.schema.RelationChoice&quot;</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">description</span><span class="o">/&gt;</span>
+  <span class="o">&lt;</span><span class="n">required</span><span class="o">&gt;</span><span class="bp">False</span><span class="o">&lt;/</span><span class="n">required</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">title</span><span class="o">&gt;</span><span class="n">Boss</span><span class="o">&lt;/</span><span class="n">title</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">field</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>RelationList:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="o">&lt;</span><span class="n">field</span> <span class="n">name</span><span class="o">=</span><span class="s">&quot;underlings&quot;</span> <span class="nb">type</span><span class="o">=</span><span class="s">&quot;z3c.relationfield.schema.RelationList&quot;</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">description</span><span class="o">/&gt;</span>
+  <span class="o">&lt;</span><span class="n">required</span><span class="o">&gt;</span><span class="bp">False</span><span class="o">&lt;/</span><span class="n">required</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">title</span><span class="o">&gt;</span><span class="n">Underlings</span><span class="o">&lt;/</span><span class="n">title</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">value_type</span> <span class="nb">type</span><span class="o">=</span><span class="s">&quot;z3c.relationfield.schema.RelationChoice&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">title</span> <span class="n">i18n</span><span class="p">:</span><span class="n">translate</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="o">&gt;</span><span class="n">Relation</span> <span class="n">Choice</span><span class="o">&lt;/</span><span class="n">title</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">portal_type</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">element</span><span class="o">&gt;</span><span class="n">Document</span><span class="o">&lt;/</span><span class="n">element</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="n">element</span><span class="o">&gt;</span><span class="n">News</span> <span class="n">Item</span><span class="o">&lt;/</span><span class="n">element</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">portal_type</span><span class="o">&gt;</span>
+  <span class="o">&lt;/</span><span class="n">value_type</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">field</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="the-stack">
+<h2>The stack<a class="headerlink" href="#the-stack" title="Permalink to this headline">¶</a></h2>
+<p>Relations are based on <a class="reference external" href="https://pypi.python.org/pypi/zc.relation/">zc.relation</a>.
+This package allows to store transitive and intransitive relationships.
+It allows for complex relationships and searches along them.
+Because of this functionality, the package is a bit complicated.</p>
+<p>The package <cite>zc.relation</cite> provides its own catalog, a relation catalog.
+This is a storage optimized for the queries needed.
+<cite>zc.relation</cite> is sort of an outlier with regards to zope documentation. It has extensive documentation, with a good level of doctests for explaining things.</p>
+<p>You can use <cite>zc.relation</cite> to store the objects and its relations directly into the catalog.
+But the additional packages that make up the relation functionality don&#8217;t use the catalog this way.</p>
+<p>We want to work with schemas to get auto generated forms.
+The logic for this is provided by the package <a class="reference external" href="https://pypi.python.org/pypi/z3c.relationfield/">z3c.relationfield</a>.
+This package contains the RelationValue object and everything needed to define a relation schema, and all the code that is necessary to automatically update the catalog.</p>
+<p>A RelationValue Object does not reference all objects directly.
+For the target, it uses an id it gets from the <cite>IntId</cite> Utility. This id allows direct recovery of the object. The source object stores it directly.</p>
+<p>Widgets are provided by <cite>plone.app.z3cform</cite> and some converters are provided by <cite>plone.app.relationfield</cite>.
+The widget that Plone uses can also store objects directly.
+Because of this, the following happens when saving a relation via a form:</p>
+<ol class="arabic simple">
+<li>The html shows some nice representation of selectable objects.</li>
+<li>When the user submits the form, selected items are submitted by their UUIDs.</li>
+<li>The Widget retrieves the original object with the UUID.</li>
+<li>Some datamanager gets another unique ID from an IntID Tool.</li>
+<li>The same datamanager creates a RelationValue from this id, and stores this relation value on the source object.</li>
+<li>Some Event handlers update the catalogs.</li>
+</ol>
+<p>You could delete a Relation like this <cite>delattr(rel.from_object, rel.from_attribute)</cite></p>
+<p>This is a terrible idea by the way, because when you define in your schema that one can store multiple RelationValues, your Relation is stored in a list on this attribute.</p>
+<p>Relations depend on a lot of infrastructure to work.
+This infrastructure in turn depends a lot on event handlers being thrown properly.
+When this is not the case things can break.
+Because of this, there is a method <cite>isBroken</cite> which you can use to check if the target is available.</p>
+<p>There are alternatives to using Relations. You could instead just store the UUID of an object.
+But using real relations and the catalog allows for very powerful things.
+The simplest concrete advantage is the possibility to see what links to your object.</p>
+<p>The builtin linkintegrity-feature of Plone 5 is also built using relations.</p>
+</div>
+<div class="section" id="relationvalues">
+<h2>RelationValues<a class="headerlink" href="#relationvalues" title="Permalink to this headline">¶</a></h2>
+<p>RelationValue objects have a fairly complete API.
+For both target and source, you can receive the IntId, the object and the path.
+On a RelationValue, the terms <cite>source</cite> and <cite>target</cite> aren&#8217;t used. Instead, they are <cite>from</cite> and <cite>to</cite>.
+So the API for getting the target is:</p>
+<ul class="simple">
+<li><cite>to_id</cite></li>
+<li><cite>to_path</cite></li>
+<li><cite>to_object</cite></li>
+</ul>
+<p>In addition, the relation value knows under which attribute it has been stored.</p>
+</div>
+<div class="section" id="backrelations">
+<h2>Backrelations<a class="headerlink" href="#backrelations" title="Permalink to this headline">¶</a></h2>
+<p>If you want to find out what objects are related to each other, you use the relation catalog.
+Here is an example:</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="registry.html" class="btn btn-neutral float-right" title="34. Storing Settings in the Registry and create control-panels" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="dexterity_3.html" class="btn btn-neutral" title="32. Dexterity Types III: Python" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright The text and illustrations in this website are licensed by the Plone Foundation under a Creative Commons Attribution 4.0 International license..
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.2.5a',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .admonition-title").show();
+        $(".toggle .admonition-title").click(function() {
+            $(this).parent().children().not(".admonition-title").toggle(400);
+            $(this).parent().children(".admonition-title").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

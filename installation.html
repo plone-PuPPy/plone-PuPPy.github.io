@@ -1,0 +1,370 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>2. Installation &amp; Setup &mdash; Mastering Plone 1.2.5a documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="about.html"/>
+    <link rel="top" title="Mastering Plone 1.2.5a documentation" href="index.html"/>
+        <link rel="next" title="3. Installing Plone for the Training" href="plone_training_config/instructions.html"/>
+        <link rel="prev" title="1. Introduction" href="intro.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Mastering Plone
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.2.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="about.html">About Mastering Plone</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">1. Introduction</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">2. Installation &amp; Setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installing-plone">Installing Plone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hosting-plone">Hosting Plone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#production-deployment">Production Deployment</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="plone_training_config/instructions.html">3. Installing Plone for the Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="anatomy.html">4. The Anatomy of Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="case.html">5. The Case Study</a></li>
+<li class="toctree-l1"><a class="reference internal" href="features.html">6. The Features of Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plone5.html">7. What&#8217;s New in Plone 5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuring_customizing.html">8. Configuring and Customizing Plone &#8220;Through The Web&#8221;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extending.html">9. Extending Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="add-ons.html">10. Extend Plone With Add-On Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="theming/index.html">11. Mastering Plone 5: Theming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="javascript/index.html">JavaScript for Plone Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dexterity.html">12. Dexterity I: &#8220;Through The Web&#8221;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="buildout_1.html">13. Buildout I</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eggs1.html">14. Write Your Own Add-Ons to Customize Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="export_code.html">15. Return to Dexterity: Moving contenttypes into Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="views_1.html">16. Views I</a></li>
+<li class="toctree-l1"><a class="reference internal" href="zpt.html">17. Page Templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="zpt_2.html">18. Customizing Existing Templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="views_2.html">19. Views II: A Default View for &#8220;Talk&#8221;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="views_3.html">20. Views III: A Talk List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="testing.html">21. Testing in Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="behaviors_1.html">22. Behaviors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="viewlets_1.html">23. Writing Viewlets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">24. Programming Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ide.html">25. IDEs and Editors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dexterity_2.html">26. Dexterity Types II: Growing Up</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom_search.html">27. Custom Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="events.html">28. Turning Talks into Events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user_generated_content.html">29. User Generated Content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">30. Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thirdparty_behaviors.html">31. Using Third-Party Behaviors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dexterity_3.html">32. Dexterity Types III: Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="relations.html">33. Relations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="registry.html">34. Storing Settings in the Registry and create control-panels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eggs2.html">35. Creating Reusable Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="behaviors_2.html">36. More Complex Behaviors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="viewlets_2.html">37. A Viewlet for the Votable Behavior</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reusable.html">38. Making Our Package Reusable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embed.html">39. Using starzel.votable_behavior in ploneconf.site</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deployment_code.html">40. Releasing Your Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deployment_sites.html">41. Buildout II: Getting Ready for Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="frontpage.html">42. Creating a Dynamic Front Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="future_of_plone.html">43. The Future of Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optional.html">44. Optional</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="CHANGES.html">Changelog</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Mastering Plone</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>2. Installation &amp; Setup</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="installation-setup">
+<span id="installation-label"></span><h1>2. Installation &amp; Setup<a class="headerlink" href="#installation-setup" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="installing-plone">
+<span id="installation-plone-label"></span><h2>Installing Plone<a class="headerlink" href="#installing-plone" title="Permalink to this headline">¶</a></h2>
+<p>The following table shows the Python versions required by Plone from version 3.x to 5.0.x:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="42%" />
+<col width="58%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Plone</th>
+<th class="head">Python</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>3.x</td>
+<td>2.4</td>
+</tr>
+<tr class="row-odd"><td>4.0.x</td>
+<td>2.6</td>
+</tr>
+<tr class="row-even"><td>4.1.x</td>
+<td>2.6</td>
+</tr>
+<tr class="row-odd"><td>4.2.x</td>
+<td>2.6 or 2.7</td>
+</tr>
+<tr class="row-even"><td>4.3.x</td>
+<td>2.7</td>
+</tr>
+<tr class="row-odd"><td>5.0.x</td>
+<td>2.7</td>
+</tr>
+</tbody>
+</table>
+<p>(Hopefully you won&#8217;t have to deal with any Plone sites older than version 3.x.)</p>
+<p>Plone 5.x requires a working Python 2.7 and several other system tools that not every OS provides. Therefore the installation of Plone is different on every system. Here are some ways that Python can be used:</p>
+<ul class="simple">
+<li>use a Python that comes pre-installed in your operating system (most Linux Distributions and Mac OS X have one)</li>
+<li>use the <a class="reference external" href="https://github.com/collective/buildout.python">python buildout</a></li>
+<li>building Linux packages</li>
+<li><a class="reference external" href="http://mxcl.github.io/homebrew/">homebrew</a> (Mac OS X)</li>
+<li>PyWin32 (Windows)</li>
+</ul>
+<p>Mac OS X 10.8 - 10.10 and Ubuntu 14.04 come with a working default Python 2.7 built in. These are the lucky ones.</p>
+<p>Most developers use their primary system to develop Plone. For complex setups they often use Linux virtual machines.</p>
+<ul class="simple">
+<li>OS X: Use the python buildout to compile python and homebrew for some missing Linux tools.</li>
+<li>Linux: Depending on your Linux flavor you might have to build python yourself and install some tools.</li>
+<li>Windows: Alan Runyan (one of Plone&#8217;s founders) uses it. A downside: Plone seems to be running much slower on Windows.</li>
+</ul>
+<p>Plone offers multiple options for being installed:</p>
+<ol class="arabic simple">
+<li>Unified installers (all &#8216;nix, including OS X)</li>
+<li>A Vagrant/VirtualBox install kit (all platforms)</li>
+<li>A VirtualBox Appliance</li>
+<li>Use your own Buildout</li>
+</ol>
+<p>You can download all of these at <a class="reference external" href="https://plone.org/products/plone/releases/5.0">https://plone.org/products/plone/releases/5.0</a></p>
+<p>For the training we&#8217;ll use option 2 and 4 to install and run Plone. We&#8217;ll create our own Buildout and extend it as we wish. But we will do so in a vagrant machine. For your own first experiments we recommend option 1 or 2 (if you have a Windows laptop or encounter problems). Later on you should be able to use your own Buildout (we&#8217;ll cover that later on).</p>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<ul class="last simple">
+<li><a class="reference external" href="http://docs.plone.org/manage/installing/installation.html">http://docs.plone.org/manage/installing/installation.html</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="hosting-plone">
+<span id="installation-hosting-label"></span><h2>Hosting Plone<a class="headerlink" href="#hosting-plone" title="Permalink to this headline">¶</a></h2>
+<p>If you want to host a real live Plone site yourself then running it from your laptop is not a viable option.</p>
+<p>You can host Plone...</p>
+<ul class="simple">
+<li>with one of many professional <a class="reference external" href="http://plone.com/providers">hosting providers</a></li>
+<li>on a virtual private server</li>
+<li>on dedicated servers</li>
+<li>on <a class="reference external" href="https://www.heroku.com">heroku</a> you can run Plone for <em>free</em> using the <a class="reference external" href="https://github.com/plone/heroku-buildpack-plone">Heroku buildpack for Plone</a></li>
+<li>in the cloud (e.g. using Amazon EC2 or <a class="reference external" href="http://blog.dbain.com/2014/04/install-plone-in-under-5-minutes-on.html">Codio.com</a>)</li>
+</ul>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<ul class="last simple">
+<li>Plone Installation Requirements: <a class="reference external" href="http://docs.plone.org/manage/installing/requirements.html">http://docs.plone.org/manage/installing/requirements.html</a></li>
+<li>Run Plone on a 5$ plan: <a class="reference external" href="http://www.stevemcmahon.com/steves-blog/plone-on-5-a-month">http://www.stevemcmahon.com/steves-blog/plone-on-5-a-month</a></li>
+<li>Where to host Plone: <a class="reference external" href="https://plone.org/documentation/faq/where-can-i-host-my-plone-site">https://plone.org/documentation/faq/where-can-i-host-my-plone-site</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="production-deployment">
+<span id="installation-prod-deploy-label"></span><h2>Production Deployment<a class="headerlink" href="#production-deployment" title="Permalink to this headline">¶</a></h2>
+<p>The way we&#8217;re setting up a Plone site during this class may be adequate for a small site — or even a very large one that&#8217;s not very busy — but you&#8217;re likely to want to do much more if you&#8217;re using Plone for anything demanding.</p>
+<ul class="simple">
+<li>Using a production web server like Apache or Nginx for URL rewriting, SSL and combining multiple, best-of-breed solutions into a single web site.</li>
+<li>Reverse proxy caching with a tool like Varnish to improve site performance.</li>
+<li>Load balancing to make best use of multiple core CPUs and even multiple servers.</li>
+<li>Optimizing cache headers and Plone&#8217;s internal caching schemes with plone.app.caching.</li>
+</ul>
+<p>And, you&#8217;ll need to learn strategies for efficient backup and log file rotation.</p>
+<p>All these topics are introduced in <a class="reference external" href="http://docs.plone.org/manage/deploying/index.html">Guide to deploying and installing Plone in production</a>.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="plone_training_config/instructions.html" class="btn btn-neutral float-right" title="3. Installing Plone for the Training" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="intro.html" class="btn btn-neutral" title="1. Introduction" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright The text and illustrations in this website are licensed by the Plone Foundation under a Creative Commons Attribution 4.0 International license..
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.2.5a',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .admonition-title").show();
+        $(".toggle .admonition-title").click(function() {
+            $(this).parent().children().not(".admonition-title").toggle(400);
+            $(this).parent().children(".admonition-title").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

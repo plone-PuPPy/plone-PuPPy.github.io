@@ -1,0 +1,569 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>8. Configuring and Customizing Plone “Through The Web” &mdash; Mastering Plone 1.2.5a documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="about.html"/>
+    <link rel="top" title="Mastering Plone 1.2.5a documentation" href="index.html"/>
+        <link rel="next" title="9. Extending Plone" href="extending.html"/>
+        <link rel="prev" title="7. What’s New in Plone 5" href="plone5.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Mastering Plone
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.2.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="about.html">About Mastering Plone</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">2. Installation &amp; Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plone_training_config/instructions.html">3. Installing Plone for the Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="anatomy.html">4. The Anatomy of Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="case.html">5. The Case Study</a></li>
+<li class="toctree-l1"><a class="reference internal" href="features.html">6. The Features of Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plone5.html">7. What&#8217;s New in Plone 5</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">8. Configuring and Customizing Plone &#8220;Through The Web&#8221;</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#the-control-panel">The Control Panel</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#general">General</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#content">Content</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#users">Users</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#security">Security</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#advanced">Advanced</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#change-the-logo">Change the logo</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#portlets">Portlets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#viewlets">Viewlets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#zmi-zope-management-interface">ZMI (Zope Management Interface)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#actions-portal-actions">Actions (portal_actions)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#site-actions">site_actions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#global-navigation">Global navigation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#skins-portal-skins">Skins (portal_skins)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#change-some-css">Change some css</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#portal-view-customizations">portal_view_customizations</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#change-the-footer">Change the footer</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#css-registry-portal-css">CSS Registry (portal_css)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#further-tools-in-the-zmi">Further tools in the ZMI</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#summary">Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="extending.html">9. Extending Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="add-ons.html">10. Extend Plone With Add-On Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="theming/index.html">11. Mastering Plone 5: Theming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="javascript/index.html">JavaScript for Plone Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dexterity.html">12. Dexterity I: &#8220;Through The Web&#8221;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="buildout_1.html">13. Buildout I</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eggs1.html">14. Write Your Own Add-Ons to Customize Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="export_code.html">15. Return to Dexterity: Moving contenttypes into Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="views_1.html">16. Views I</a></li>
+<li class="toctree-l1"><a class="reference internal" href="zpt.html">17. Page Templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="zpt_2.html">18. Customizing Existing Templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="views_2.html">19. Views II: A Default View for &#8220;Talk&#8221;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="views_3.html">20. Views III: A Talk List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="testing.html">21. Testing in Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="behaviors_1.html">22. Behaviors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="viewlets_1.html">23. Writing Viewlets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">24. Programming Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ide.html">25. IDEs and Editors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dexterity_2.html">26. Dexterity Types II: Growing Up</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom_search.html">27. Custom Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="events.html">28. Turning Talks into Events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user_generated_content.html">29. User Generated Content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">30. Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thirdparty_behaviors.html">31. Using Third-Party Behaviors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dexterity_3.html">32. Dexterity Types III: Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="relations.html">33. Relations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="registry.html">34. Storing Settings in the Registry and create control-panels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eggs2.html">35. Creating Reusable Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="behaviors_2.html">36. More Complex Behaviors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="viewlets_2.html">37. A Viewlet for the Votable Behavior</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reusable.html">38. Making Our Package Reusable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embed.html">39. Using starzel.votable_behavior in ploneconf.site</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deployment_code.html">40. Releasing Your Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deployment_sites.html">41. Buildout II: Getting Ready for Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="frontpage.html">42. Creating a Dynamic Front Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="future_of_plone.html">43. The Future of Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optional.html">44. Optional</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="CHANGES.html">Changelog</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Mastering Plone</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>8. Configuring and Customizing Plone &#8220;Through The Web&#8221;</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="configuring-and-customizing-plone-through-the-web">
+<span id="customizing-label"></span><h1>8. Configuring and Customizing Plone &#8220;Through The Web&#8221;<a class="headerlink" href="#configuring-and-customizing-plone-through-the-web" title="Permalink to this headline">¶</a></h1>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<blockquote class="last">
+<div>This chapter has not yet been updated for Plone 5!</div></blockquote>
+</div>
+<div class="section" id="the-control-panel">
+<span id="customizing-controlpanel-label"></span><h2>The Control Panel<a class="headerlink" href="#the-control-panel" title="Permalink to this headline">¶</a></h2>
+<p>The most important parts of Plone can be configured in the control panel.</p>
+<ul class="simple">
+<li>Click on the portrait/username in the toolbar</li>
+<li>Click &#8220;Site Setup&#8221;</li>
+</ul>
+<p>We&#8217;ll explain every page and mention some of the actions you can perform here.</p>
+<div class="section" id="general">
+<h3>General<a class="headerlink" href="#general" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Date and Time</li>
+<li>Language</li>
+<li>Mail</li>
+<li>Navigation</li>
+<li>Site</li>
+<li>Add-ons</li>
+<li>Search</li>
+<li>Discussion</li>
+<li>Theming</li>
+<li>Social Media</li>
+<li>Syndication</li>
+<li>TinyMCE</li>
+</ol>
+</div>
+<div class="section" id="content">
+<h3>Content<a class="headerlink" href="#content" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Content Rules</li>
+<li>Editing</li>
+<li>Image Handling</li>
+<li>Markup</li>
+<li>Content Settings</li>
+<li>Dexterity Content Types</li>
+</ol>
+</div>
+<div class="section" id="users">
+<h3>Users<a class="headerlink" href="#users" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Users and Groups</li>
+</ol>
+</div>
+<div class="section" id="security">
+<h3>Security<a class="headerlink" href="#security" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>HTML Filtering</li>
+<li>Security</li>
+<li>Errors</li>
+</ol>
+</div>
+<div class="section" id="advanced">
+<h3>Advanced<a class="headerlink" href="#advanced" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Maintenance</li>
+<li>Management Interface</li>
+<li>Caching</li>
+<li>Configuration Registry</li>
+<li>Resource Registries</li>
+</ol>
+<p>Below the links you will find information on your Plone, Zope and Python Versions and an indicator as to whether you&#8217;re running in production or development mode.</p>
+<div class="section" id="change-the-logo">
+<h4>Change the logo<a class="headerlink" href="#change-the-logo" title="Permalink to this headline">¶</a></h4>
+<p>Let&#8217;s change the Logo.</p>
+<ul class="simple">
+<li>Download a ploneconf logo: <a class="reference external" href="http://www.starzel.de/plone-tutorial/ploneconf-logo-2014/image">http://www.starzel.de/plone-tutorial/ploneconf-logo-2014/image</a></li>
+<li>Go to <a class="reference external" href="http://localhost:8080/Plone/&#64;&#64;site-controlpanel">http://localhost:8080/Plone/&#64;&#64;site-controlpanel</a></li>
+<li>Upload the Logo.</li>
+</ul>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference external" href="http://docs.plone.org/adapt-and-extend/change-the-logo.html">http://docs.plone.org/adapt-and-extend/change-the-logo.html</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="portlets">
+<span id="customizing-portlets-label"></span><h2>Portlets<a class="headerlink" href="#portlets" title="Permalink to this headline">¶</a></h2>
+<p>In the toolbar under <em>More options</em> you can open the configuration for the different places where you can have portlets.</p>
+<ul class="simple">
+<li>UI fit for smart content editors</li>
+<li>various types</li>
+<li>portlet configuration is inherited</li>
+<li>managing</li>
+<li>ordering/weighting</li>
+<li>The future: may be replaced by tiles</li>
+<li><code class="docutils literal"><span class="pre">&#64;&#64;manage-portlets</span></code></li>
+</ul>
+<p>Example:</p>
+<ul class="simple">
+<li>go to <a class="reference external" href="http://localhost:8080/Plone/&#64;&#64;manage-portlets">http://localhost:8080/Plone/&#64;&#64;manage-portlets</a></li>
+<li>Add a static portlet &#8220;Sponsors&#8221; on the right side.</li>
+<li>Remove the news portlet and add a new one on the left side.</li>
+<li>Go to the training folder: <a class="reference external" href="http://localhost:8080/Plone/the-event/training">http://localhost:8080/Plone/the-event/training</a> and click <code class="docutils literal"><span class="pre">Manage</span> <span class="pre">portlets</span></code></li>
+<li>Add a static portlet. &#8220;Featured training: Become a Plone-Rockstar at Mastering Plone!&#8221;</li>
+<li>Use the toolbar to configure the portlets of the footer:<ul>
+<li>Hide the portlets &#8220;Footer&#8221; and &#8220;Colophon&#8221;.</li>
+<li>Add a &#8220;Static text portlet&#8221; enter &#8220;Copyright 2015 by Plone Community&#8221;.</li>
+<li>Use &#8220;Insert &gt; Special Character&#8221; to add a real © sign.</li>
+<li>You could turn that into a link to a copyright page later.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="viewlets">
+<span id="customizing-viewlets-label"></span><h2>Viewlets<a class="headerlink" href="#viewlets" title="Permalink to this headline">¶</a></h2>
+<p>Portlets save data, Viewlets usually don&#8217;t. Viewlets are often used for UI-Elements and have no nice UI to customize them.</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">&#64;&#64;manage-viewlets</span></code></li>
+<li>Viewlets have no nice UI</li>
+<li>Not aimed at content editors</li>
+<li>Not locally addable, no configurable inheritance.</li>
+<li>Usually global (depends on code)</li>
+<li>Will be replaced by tiles?</li>
+<li>The code is much simpler (we&#8217;ll create one tomorrow)</li>
+<li>Live in viewlet managers, can be nested (by adding a viewlet that contains a viewlet manager)</li>
+<li>TTW reordering only within the same viewlet manager</li>
+<li>the code decides when it is shown and what it shows</li>
+</ul>
+</div>
+<div class="section" id="zmi-zope-management-interface">
+<span id="customizing-zmi-label"></span><h2>ZMI (Zope Management Interface)<a class="headerlink" href="#zmi-zope-management-interface" title="Permalink to this headline">¶</a></h2>
+<p>Go to <a class="reference external" href="http://localhost:8080/Plone/manage">http://localhost:8080/Plone/manage</a></p>
+<p>Zope is the foundation of Plone. Here you can access the inner workings of Zope and Plone alike.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Here you can easily break your site so you should know what you are doing!</p>
+</div>
+<p>We only cover three parts of customization in the ZMI now. Later on when we added our own code we&#8217;ll come back to the ZMI and will look for it.</p>
+<p>At some point you&#8217;ll have to learn what all those objects are about. But not today.</p>
+<div class="section" id="actions-portal-actions">
+<h3>Actions (portal_actions)<a class="headerlink" href="#actions-portal-actions" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Actions are mostly links. But <strong>really flexible</strong> links.</li>
+<li>Actions are configurable ttw and through code.</li>
+<li>These actions are usually iterated over in viewlets and displayed.</li>
+</ul>
+<p>Examples:</p>
+<ul class="simple">
+<li>Links in the Footer (site_actions)</li>
+<li>Actions Dropdown (folder_buttons)</li>
+</ul>
+<p>Actions have properties like:</p>
+<ul class="simple">
+<li>description</li>
+<li>url</li>
+<li>i18n-domain</li>
+<li>condition</li>
+<li>permissions</li>
+</ul>
+<div class="section" id="site-actions">
+<h4>site_actions<a class="headerlink" href="#site-actions" title="Permalink to this headline">¶</a></h4>
+<p>These are the links at the bottom of the page:</p>
+<ul class="simple">
+<li>Site Map</li>
+<li>Accessibility</li>
+<li>Contact</li>
+<li>Site Setup</li>
+</ul>
+<p>We want a new link to legal information, called &#8220;Imprint&#8221;.</p>
+<ul class="simple">
+<li>Go to <code class="docutils literal"><span class="pre">site_actions</span></code> (we know that because we checked in <code class="docutils literal"><span class="pre">&#64;&#64;manage-viewlets</span></code>)</li>
+<li>Add a CMF Action <code class="docutils literal"><span class="pre">imprint</span></code></li>
+<li>Set URL to <code class="docutils literal"><span class="pre">string:${portal_url}/imprint</span></code></li>
+<li>Leave <em>condition</em> empty</li>
+<li>Set permission to <code class="docutils literal"><span class="pre">View</span></code></li>
+<li>Save</li>
+</ul>
+<p>explain</p>
+<ul class="simple">
+<li>Check if the link is on the page</li>
+<li>Create new Document <cite>Imprint</cite> and publish</li>
+</ul>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference external" href="http://docs.plone.org/develop/plone/functionality/actions.html">http://docs.plone.org/develop/plone/functionality/actions.html</a></p>
+</div>
+</div>
+<div class="section" id="global-navigation">
+<h4>Global navigation<a class="headerlink" href="#global-navigation" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>The horizontal navigation is called <code class="docutils literal"><span class="pre">portal_tabs</span></code></li>
+<li>go to <code class="docutils literal"><span class="pre">portal_actions</span></code> &gt; <code class="docutils literal"><span class="pre">portal_tabs</span></code> <a class="reference external" href="http://localhost:8080/Plone/portal_actions/portal_tabs/manage_main">Link</a></li>
+<li>Edit <code class="docutils literal"><span class="pre">index_html</span></code></li>
+</ul>
+<p>Where is the navigation?</p>
+<p>The navigation shows content-objects, which are in Plone&#8217;s root. Plus all actions in portal_tabs</p>
+<p>Explain &amp; edit index_html</p>
+<p>Configuring the navigation itself is done elsewhere: <a class="reference external" href="http://localhost:8080/Plone/&#64;&#64;navigation-controlpanel">http://localhost:8080/Plone/&#64;&#64;navigation-controlpanel</a></p>
+<p>If time explain:</p>
+<ul class="simple">
+<li>user &gt; undo (cool!)</li>
+<li>user &gt; login/logout</li>
+</ul>
+</div>
+</div>
+<div class="section" id="skins-portal-skins">
+<h3>Skins (portal_skins)<a class="headerlink" href="#skins-portal-skins" title="Permalink to this headline">¶</a></h3>
+<p>In portal_skins we can change certain images, css-files and templates.</p>
+<ul class="simple">
+<li>portal_skins is deprecated technology</li>
+<li>Plone 5 got rid of a most files that lived in portal_skins.</li>
+</ul>
+<div class="section" id="change-some-css">
+<h4>Change some css<a class="headerlink" href="#change-some-css" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>Go to ZMI</li>
+<li>go to portal_skins</li>
+<li>go to plone_styles</li>
+<li>go to <code class="docutils literal"><span class="pre">ploneCustom.css</span></code></li>
+<li>click <code class="docutils literal"><span class="pre">customize</span></code></li>
+</ul>
+<p>The css you add to this file is instantly active on the site.</p>
+</div>
+</div>
+<div class="section" id="portal-view-customizations">
+<h3>portal_view_customizations<a class="headerlink" href="#portal-view-customizations" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="change-the-footer">
+<h4>Change the footer<a class="headerlink" href="#change-the-footer" title="Permalink to this headline">¶</a></h4>
+<ul>
+<li><p class="first">Go to <code class="docutils literal"><span class="pre">portal_view_customizations</span></code></p>
+</li>
+<li><p class="first">Search <code class="docutils literal"><span class="pre">plone.footer</span></code>, click and customize</p>
+</li>
+<li><p class="first">replace the content with the following</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">i18n:domain=</span><span class="s">&quot;plone&quot;</span>
+     <span class="na">id=</span><span class="s">&quot;portal-footer&quot;</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;p&gt;</span><span class="ni">&amp;copy;</span> 2016 by me! |
+     <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;mailto:info@ploneconf.org&quot;</span><span class="nt">&gt;</span>
+      Contact us
+     <span class="nt">&lt;/a&gt;</span>
+   <span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference external" href="http://docs.plone.org/adapt-and-extend/theming/templates_css/skin_layers.html">http://docs.plone.org/adapt-and-extend/theming/templates_css/skin_layers.html</a></p>
+</div>
+</div>
+</div>
+<div class="section" id="css-registry-portal-css">
+<h3>CSS Registry (portal_css)<a class="headerlink" href="#css-registry-portal-css" title="Permalink to this headline">¶</a></h3>
+<p><em>deprecated</em> (See the chapter on theming)</p>
+</div>
+<div class="section" id="further-tools-in-the-zmi">
+<h3>Further tools in the ZMI<a class="headerlink" href="#further-tools-in-the-zmi" title="Permalink to this headline">¶</a></h3>
+<p>There are many more notable items in the ZMI. We&#8217;ll visit some of them later.</p>
+<ul class="simple">
+<li>acl_users</li>
+<li>error_log</li>
+<li>portal_properties (deprecated)</li>
+<li>portal_setup</li>
+<li>portal_workflow</li>
+<li>portal_catalog</li>
+</ul>
+</div>
+</div>
+<div class="section" id="summary">
+<span id="customizing-summary-label"></span><h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>You can configure and customize a lot in Plone through the web. The most important options are accessible in the <a class="reference external" href="http://localhost:8080/Plone/&#64;&#64;overview-controlpanel">plone control panel</a> but some are hidden away in the <a class="reference external" href="http://localhost:8080/Plone/manage">ZMI</a>. The amount and presentation of information is overwhelming but you&#8217;ll get the hang of it through a lot of practice.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="extending.html" class="btn btn-neutral float-right" title="9. Extending Plone" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="plone5.html" class="btn btn-neutral" title="7. What’s New in Plone 5" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright The text and illustrations in this website are licensed by the Plone Foundation under a Creative Commons Attribution 4.0 International license..
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.2.5a',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .admonition-title").show();
+        $(".toggle .admonition-title").click(function() {
+            $(this).parent().children().not(".admonition-title").toggle(400);
+            $(this).parent().children(".admonition-title").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

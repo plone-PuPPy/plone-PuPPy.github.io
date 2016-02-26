@@ -1,0 +1,366 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>4. The Anatomy of Plone &mdash; Mastering Plone 1.2.5a documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="about.html"/>
+    <link rel="top" title="Mastering Plone 1.2.5a documentation" href="index.html"/>
+        <link rel="next" title="5. The Case Study" href="case.html"/>
+        <link rel="prev" title="3. Installing Plone for the Training" href="plone_training_config/instructions.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Mastering Plone
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.2.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="about.html">About Mastering Plone</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">2. Installation &amp; Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plone_training_config/instructions.html">3. Installing Plone for the Training</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">4. The Anatomy of Plone</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#zope2">Zope2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#content-management-framework">Content Management Framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#zope-toolkit-zope3">Zope Toolkit / Zope3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#zope-component-architecture-zca">Zope Component Architecture (ZCA)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pyramid">Pyramid</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="case.html">5. The Case Study</a></li>
+<li class="toctree-l1"><a class="reference internal" href="features.html">6. The Features of Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plone5.html">7. What&#8217;s New in Plone 5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuring_customizing.html">8. Configuring and Customizing Plone &#8220;Through The Web&#8221;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extending.html">9. Extending Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="add-ons.html">10. Extend Plone With Add-On Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="theming/index.html">11. Mastering Plone 5: Theming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="javascript/index.html">JavaScript for Plone Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dexterity.html">12. Dexterity I: &#8220;Through The Web&#8221;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="buildout_1.html">13. Buildout I</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eggs1.html">14. Write Your Own Add-Ons to Customize Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="export_code.html">15. Return to Dexterity: Moving contenttypes into Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="views_1.html">16. Views I</a></li>
+<li class="toctree-l1"><a class="reference internal" href="zpt.html">17. Page Templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="zpt_2.html">18. Customizing Existing Templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="views_2.html">19. Views II: A Default View for &#8220;Talk&#8221;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="views_3.html">20. Views III: A Talk List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="testing.html">21. Testing in Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="behaviors_1.html">22. Behaviors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="viewlets_1.html">23. Writing Viewlets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">24. Programming Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ide.html">25. IDEs and Editors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dexterity_2.html">26. Dexterity Types II: Growing Up</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom_search.html">27. Custom Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="events.html">28. Turning Talks into Events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user_generated_content.html">29. User Generated Content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">30. Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thirdparty_behaviors.html">31. Using Third-Party Behaviors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dexterity_3.html">32. Dexterity Types III: Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="relations.html">33. Relations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="registry.html">34. Storing Settings in the Registry and create control-panels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eggs2.html">35. Creating Reusable Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="behaviors_2.html">36. More Complex Behaviors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="viewlets_2.html">37. A Viewlet for the Votable Behavior</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reusable.html">38. Making Our Package Reusable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embed.html">39. Using starzel.votable_behavior in ploneconf.site</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deployment_code.html">40. Releasing Your Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deployment_sites.html">41. Buildout II: Getting Ready for Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="frontpage.html">42. Creating a Dynamic Front Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="future_of_plone.html">43. The Future of Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optional.html">44. Optional</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="CHANGES.html">Changelog</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Mastering Plone</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>4. The Anatomy of Plone</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="the-anatomy-of-plone">
+<span id="anatomy-label"></span><h1>4. The Anatomy of Plone<a class="headerlink" href="#the-anatomy-of-plone" title="Permalink to this headline">¶</a></h1>
+<p>In this part you will:</p>
+<ul class="simple">
+<li>Learn a bit about the history of Plone.</li>
+</ul>
+<p>Topics covered:</p>
+<ul class="simple">
+<li>CMF</li>
+<li>Zope</li>
+<li>Pyramid</li>
+<li>Bluebream</li>
+</ul>
+<p>Python, Zope, CMF, Plone ... &#8211; how does all that fit together?</p>
+<div class="section" id="zope2">
+<span id="anatomy-zope2-label"></span><h2>Zope2<a class="headerlink" href="#zope2" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Zope is a web application framework that Plone runs on top of.</li>
+<li>The majority of Zope&#8217;s code is written in Python, like everything else written on top of it.</li>
+<li>It serves applications that communicate with users via http.</li>
+</ul>
+<p>Before Zope, there usually was an Apache server that would call a script and give the request as an input. The script would then just print HTML to the standard output. Apache returned that to the user. Opening database connections, checking permission constraints, generating valid HTML, configuring caching, interpreting form data and everything else: you have to do it on your own. When the second request comes in, you have to do everything again.</p>
+<p>Jim Fulton thought that this was slightly tedious. So he wrote code to handle requests. He believed that site content is object-oriented and that the URL should somehow point directly into the object hierarchy, so he wrote an object-oriented database, called <a class="reference external" href="http://www.zodb.org/en/latest/">ZODB</a>.</p>
+<p>The ZODB is a fully <a class="reference external" href="https://en.wikipedia.org/wiki/ACID">ACID</a> compliant database with automatic transactional integrity. It automatically maps traversal in the object hierarchy to URL paths, so there is no need to &#8220;wire&#8221; objects or database nodes to URLs. This gives Plone its easy SEO-friendly URLs.</p>
+<p>Traversal through the object database is security checked at every point via very fine grained access-control lists.</p>
+<p>One missing piece is important and complicated: <code class="docutils literal"><span class="pre">Acquisition</span></code>.</p>
+<p>Acquisition is a kind of magic. Imagine a programming system where you do not access the file system and where you do not need to import code. You work with objects. An object can be a folder that contains more objects, an HTML page, data, or another script. To access an object, you need to know where the object is. Objects are found by paths that look like URLs, but without the domain name. Now Acquisition allows you to write an incomplete path. An incomplete path is a relative path, it does not explicitly state that the path starts from the root, it starts relative to where the content object is &#8211; its context. If Zope cannot resolve the path to an object relative to your code, it tries the same path in the containing folder. And then the folder containing the folder.</p>
+<p>This might sound weird, what do I gain with this?</p>
+<p>You can have different data or code depending on your <code class="docutils literal"><span class="pre">context</span></code>. Imagine you want to have header images differing for each section of your page, sometimes even differing for a specific subsection of your site. So you define a path header_image and put a header image at the root of your site. If you want a folder with a different header image, you put the header image into this folder.
+Please take a minute to let this settle and think about what this allows you to do.</p>
+<ul class="simple">
+<li>contact forms with different e-mail addresses per section</li>
+<li>different CSS styles for different parts of your site</li>
+<li>One site, multiple customers, everything looks different for each customer.</li>
+</ul>
+<p>As with all programming magic, acquisition exacts a price. Zope code must be written carefully in order to avoid inheriting side effects via acquisition. The Zope community expresses this with the Python (Monty) maxim: Beware the <cite>Spammish Acquisition</cite>.</p>
+<p>Basically this is Zope.</p>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<ul class="last simple">
+<li><a class="reference external" href="http://www.zope.org/the-world-of-zope">http://www.zope.org/the-world-of-zope</a></li>
+<li><a class="reference external" href="http://docs.zope.org/zope2/zope2book/">http://docs.zope.org/zope2/zope2book/</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="content-management-framework">
+<span id="anatomy-cmf-label"></span><h2>Content Management Framework<a class="headerlink" href="#content-management-framework" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="http://old.zope.org/Products/CMF/index.html/">CMF (Content Management Framework)</a> is add-on for Zope to build Content Management Systems (like Plone).</li>
+</ul>
+<p>After many websites were successfully created using Zope, a number of recurring requirements emerged, and some Zope developers started to write CMF, the Content Management Framework.</p>
+<p>The CMF offers many services that help you to write a CMS based on Zope.
+Most objects you see in the ZMI are part of the CMF somehow.</p>
+<p>The developers behind CMF do not see CMF as a ready to use CMS. They created a CMS Site which was usable out of the box, but made it deliberately ugly, because you have to customize it anyway.</p>
+<p>We are still in prehistoric times here. There were no eggs (Python packages), Zope did not consist of 100 independent software components but was one big file set.</p>
+<p>Many parts of Plone are derived from the CMF, but it&#8217;s a mixed heritage. The CMF is an independent software project, and has often moved more slowly than Plone. Plone is gradually eliminating dependence on most parts of the CMF.</p>
+</div>
+<div class="section" id="zope-toolkit-zope3">
+<span id="anatomy-ztk-label"></span><h2>Zope Toolkit / Zope3<a class="headerlink" href="#zope-toolkit-zope3" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Zope 3 was originally intended as a rewrite of Zope from the ground up.</li>
+<li>Plone uses parts of it provided by the <a class="reference external" href="http://docs.zope.org/zopetoolkit/">Zope Toolkit (ZTK)</a>.</li>
+</ul>
+<p>Unfortunately, nobody started to use Zope 3, nobody migrated to Zope 3 because nobody knew how.</p>
+<p>But there were many useful things in Zope 3 that people wanted to use in Zope 2, thus the Zope community adapted some parts so that they could use them in Zope 2.
+Sometimes, a wrapper of some sort was necessary, these usually are being provided by packages from the <code class="docutils literal"><span class="pre">five</span></code> namespace.  (Zope 2 + Zope 3 = <cite>five</cite>)</p>
+<p>To make the history complete, since people stayed on Zope 2, the Zope community renamed Zope 3 to Bluebream, so that people would not think that Zope 3 was the future. It wasn&#8217;t anymore.</p>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<ul class="last simple">
+<li><a class="reference external" href="https://plone.org/documentation/faq/zope-3-and-plone">https://plone.org/documentation/faq/zope-3-and-plone</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="zope-component-architecture-zca">
+<span id="anatomy-zca-label"></span><h2>Zope Component Architecture (ZCA)<a class="headerlink" href="#zope-component-architecture-zca" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference external" href="http://muthukadan.net/docs/zca.html">Zope Component Architecture</a>, which was developed as part of Zope 3, is a system which allows for component pluggability and complex dispatching based on objects which implement an interface (a description of a functionality). Plone makes extensive use of the ZCA in its codebase.</p>
+</div>
+<div class="section" id="pyramid">
+<span id="anatomy-pyramid-label"></span><h2>Pyramid<a class="headerlink" href="#pyramid" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="http://docs.pylonsproject.org/en/latest/docs/pyramid.html">Pyramid</a> is a Python web application development framework that is often seen as the successor to Zope.</li>
+<li>It does less than Zope, is very pluggable and <a class="reference external" href="http://docs.pylonsproject.org/projects/pyramid/en/latest/narr/zca.html">uses the Zope Component Architecture</a> “under the hood” to perform view dispatching and other application configuration tasks.</li>
+</ul>
+<p>You can use it with a relational Database instead of ZODB if you want, or you can use both databases or none of them.</p>
+<p>Apart from the fact that Pyramid was not forced to support all legacy functionality, which can make things more complicated, the original developer had a very different stance on how software must be developed. While both Zope and Pyramid have good test coverage, Pyramid has good documentation; something that was very neglected in Zope, and at times in Plone too.</p>
+<p>Whether the component architecture is better in Pyramid or not we don&#8217;t dare say, but we like it more. But maybe it&#8217;s just because it was documented.</p>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<ul class="last simple">
+<li><a class="reference external" href="http://docs.pylonsproject.org/projects/pyramid/en/latest/index.html">http://docs.pylonsproject.org/projects/pyramid/en/latest/index.html</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="case.html" class="btn btn-neutral float-right" title="5. The Case Study" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="plone_training_config/instructions.html" class="btn btn-neutral" title="3. Installing Plone for the Training" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright The text and illustrations in this website are licensed by the Plone Foundation under a Creative Commons Attribution 4.0 International license..
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.2.5a',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .admonition-title").show();
+        $(".toggle .admonition-title").click(function() {
+            $(this).parent().children().not(".admonition-title").toggle(400);
+            $(this).parent().children(".admonition-title").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

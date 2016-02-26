@@ -1,0 +1,514 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>8. Advanced resources registry usage &mdash; Mastering Plone 1.2.5a documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../about.html"/>
+    <link rel="top" title="Mastering Plone 1.2.5a documentation" href="../index.html"/>
+        <link rel="up" title="11. Mastering Plone 5: Theming" href="index.html"/>
+        <link rel="next" title="9. Advanced Diazo" href="adv-diazo.html"/>
+        <link rel="prev" title="7. Using TinyMCE templates" href="tinymce-templates.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Mastering Plone
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.2.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About Mastering Plone</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">2. Installation &amp; Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plone_training_config/instructions.html">3. Installing Plone for the Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../anatomy.html">4. The Anatomy of Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../case.html">5. The Case Study</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../features.html">6. The Features of Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plone5.html">7. What&#8217;s New in Plone 5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuring_customizing.html">8. Configuring and Customizing Plone &#8220;Through The Web&#8221;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../extending.html">9. Extending Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../add-ons.html">10. Extend Plone With Add-On Packages</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">11. Mastering Plone 5: Theming</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="basic.html">1. Basic: customizing logo and CSS of default theme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ttw-advanced.html">2. TTW advanced: intro to Diazo Theming, build custom rules through the web</a></li>
+<li class="toctree-l2"><a class="reference internal" href="static-theme.html">3. Make it reproducible basic: static theme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="theme-package.html">4. Create a Plone theme python package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="creating-customizing-templates.html">5. Creating and customizing Plone templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="creating-initial-content-for-the-theme.html">6. Creating initial content for the theme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tinymce-templates.html">7. Using TinyMCE templates</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">8. Advanced resources registry usage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#registering-css-less-resources-in-the-registry">Registering CSS/LESS resources in the registry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#using-resources-in-less-files">Using resources in LESS-files</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="adv-diazo.html">9. Advanced Diazo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="collective-jbot.html">10. Customize template on the fly: collective.jbot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="custom-components.html">11. Creating custom components</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../javascript/index.html">JavaScript for Plone Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dexterity.html">12. Dexterity I: &#8220;Through The Web&#8221;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../buildout_1.html">13. Buildout I</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eggs1.html">14. Write Your Own Add-Ons to Customize Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../export_code.html">15. Return to Dexterity: Moving contenttypes into Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../views_1.html">16. Views I</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zpt.html">17. Page Templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zpt_2.html">18. Customizing Existing Templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../views_2.html">19. Views II: A Default View for &#8220;Talk&#8221;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../views_3.html">20. Views III: A Talk List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testing.html">21. Testing in Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../behaviors_1.html">22. Behaviors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../viewlets_1.html">23. Writing Viewlets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">24. Programming Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ide.html">25. IDEs and Editors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dexterity_2.html">26. Dexterity Types II: Growing Up</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../custom_search.html">27. Custom Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../events.html">28. Turning Talks into Events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_generated_content.html">29. User Generated Content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources.html">30. Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../thirdparty_behaviors.html">31. Using Third-Party Behaviors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dexterity_3.html">32. Dexterity Types III: Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../relations.html">33. Relations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../registry.html">34. Storing Settings in the Registry and create control-panels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eggs2.html">35. Creating Reusable Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../behaviors_2.html">36. More Complex Behaviors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../viewlets_2.html">37. A Viewlet for the Votable Behavior</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reusable.html">38. Making Our Package Reusable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../embed.html">39. Using starzel.votable_behavior in ploneconf.site</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../deployment_code.html">40. Releasing Your Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../deployment_sites.html">41. Buildout II: Getting Ready for Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../frontpage.html">42. Creating a Dynamic Front Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../future_of_plone.html">43. The Future of Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../optional.html">44. Optional</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../CHANGES.html">Changelog</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Mastering Plone</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">11. Mastering Plone 5: Theming</a> &raquo;</li>
+      
+    <li>8. Advanced resources registry usage</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="advanced-resources-registry-usage">
+<h1>8. Advanced resources registry usage<a class="headerlink" href="#advanced-resources-registry-usage" title="Permalink to this headline">¶</a></h1>
+<p>In the Plone <em>resource registry</em> we can register our static resources, like
+CSS and LESS files and also JavaScript resources.
+We will cover here only CSS and LESS, but you can also do nice things
+with your JavaScript resources (for example using <em>requirejs</em> to do the import
+correctly without worrying about import order).
+For details about this, look into the documentation of the <em>resource registry</em>
+and in the JavaScript part of the training.</p>
+<div class="section" id="registering-css-less-resources-in-the-registry">
+<h2>Registering CSS/LESS resources in the registry<a class="headerlink" href="#registering-css-less-resources-in-the-registry" title="Permalink to this headline">¶</a></h2>
+<p>Because of the flexibility of LESS over CSS we will use only LESS files here,
+but static CSS files can be registered in the same way. LESS files have the
+advantage that we can use imports, and with <code class="docutils literal"><span class="pre">reference-imports</span></code> we can even
+import only the parts of the files which we are really using.</p>
+<p>Let&#8217;s see how we can register a resource in the resource registry.
+To do that, we add an <code class="docutils literal"><span class="pre">IResourceRegistry</span></code> entry into the <code class="docutils literal"><span class="pre">registry.xml</span></code> in
+our <code class="docutils literal"><span class="pre">profiles/default</span></code> folder:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+<span class="nt">&lt;registry&gt;</span>
+    <span class="nt">&lt;records</span> <span class="na">prefix=</span><span class="s">&quot;plone.resources/tango-main&quot;</span>
+              <span class="na">interface=</span><span class="s">&#39;Products.CMFPlone.interfaces.IResourceRegistry&#39;</span><span class="nt">&gt;</span>
+       <span class="nt">&lt;value</span> <span class="na">key=</span><span class="s">&quot;css&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;element&gt;</span>++theme++plonetheme.tango/css/main.less<span class="nt">&lt;/element&gt;</span>
+       <span class="nt">&lt;/value&gt;</span>
+    <span class="nt">&lt;/records&gt;</span>
+<span class="nt">&lt;/registry&gt;</span>
+</pre></div>
+</div>
+<p>This registers a file named <code class="docutils literal"><span class="pre">main.less</span></code> (from our theme package named
+<code class="docutils literal"><span class="pre">plonetheme.tango</span></code>) as a <em>resource</em> named <code class="docutils literal"><span class="pre">tango-main</span></code>.
+We can now add this resource to a <em>resource bundle</em> like the existing <code class="docutils literal"><span class="pre">plone</span></code> bundle:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+<span class="nt">&lt;registry&gt;</span>
+    <span class="nt">&lt;records</span> <span class="na">prefix=</span><span class="s">&quot;plone.resources/tango-main&quot;</span>
+              <span class="na">interface=</span><span class="s">&#39;Products.CMFPlone.interfaces.IResourceRegistry&#39;</span><span class="nt">&gt;</span>
+       <span class="nt">&lt;value</span> <span class="na">key=</span><span class="s">&quot;css&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;element&gt;</span>++theme++plonetheme.tango/css/main.less<span class="nt">&lt;/element&gt;</span>
+       <span class="nt">&lt;/value&gt;</span>
+    <span class="nt">&lt;/records&gt;</span>
+
+    <span class="nt">&lt;records</span> <span class="na">prefix=</span><span class="s">&quot;plone.bundles/plone&quot;</span>
+              <span class="na">interface=</span><span class="s">&#39;Products.CMFPlone.interfaces.IBundleRegistry&#39;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;value</span> <span class="na">key=</span><span class="s">&quot;resources&quot;</span> <span class="na">purge=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;element&gt;</span>tango-main<span class="nt">&lt;/element&gt;</span>
+      <span class="nt">&lt;/value&gt;</span>
+    <span class="nt">&lt;/records&gt;</span>
+<span class="nt">&lt;/registry&gt;</span>
+</pre></div>
+</div>
+<p>This has the advantage of reducing the number of bundles,
+which also means reducing the amount of files which are loaded for the site,
+because every bundle will result in <em>one</em> compiled CSS file and <em>one</em> compiled JavaScript file.
+So if we have multiple LESS resources in the same bundle, they will be merged into one compiled
+CSS file.</p>
+<p>We can also create our own custom bundle which contains our resource (this is the way we
+did it in the <a class="reference internal" href="theme-package.html"><em>Create a Plone theme python package</em></a> chapter):</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+<span class="nt">&lt;registry&gt;</span>
+    <span class="nt">&lt;records</span> <span class="na">prefix=</span><span class="s">&quot;plone.resources/tango-main&quot;</span>
+              <span class="na">interface=</span><span class="s">&#39;Products.CMFPlone.interfaces.IResourceRegistry&#39;</span><span class="nt">&gt;</span>
+       <span class="nt">&lt;value</span> <span class="na">key=</span><span class="s">&quot;css&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;element&gt;</span>++theme++plonetheme.tango/css/main.less<span class="nt">&lt;/element&gt;</span>
+       <span class="nt">&lt;/value&gt;</span>
+    <span class="nt">&lt;/records&gt;</span>
+
+    <span class="c">&lt;!-- bundle definition --&gt;</span>
+    <span class="nt">&lt;records</span> <span class="na">prefix=</span><span class="s">&quot;plone.bundles/tango-bundle&quot;</span>
+              <span class="na">interface=</span><span class="s">&#39;Products.CMFPlone.interfaces.IBundleRegistry&#39;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;value</span> <span class="na">key=</span><span class="s">&quot;resources&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;element&gt;</span>tango-main<span class="nt">&lt;/element&gt;</span>
+      <span class="nt">&lt;/value&gt;</span>
+      <span class="nt">&lt;value</span> <span class="na">key=</span><span class="s">&quot;enabled&quot;</span><span class="nt">&gt;</span>True<span class="nt">&lt;/value&gt;</span>
+      <span class="nt">&lt;value</span> <span class="na">key=</span><span class="s">&quot;compile&quot;</span><span class="nt">&gt;</span>True<span class="nt">&lt;/value&gt;</span>
+      <span class="nt">&lt;value</span> <span class="na">key=</span><span class="s">&quot;csscompilation&quot;</span><span class="nt">&gt;</span>++theme++plonetheme.tango/css/tango-compiled.css<span class="nt">&lt;/value&gt;</span>
+      <span class="nt">&lt;value</span> <span class="na">key=</span><span class="s">&quot;last_compilation&quot;</span><span class="nt">&gt;&lt;/value&gt;</span>
+    <span class="nt">&lt;/records&gt;</span>
+<span class="nt">&lt;/registry&gt;</span>
+</pre></div>
+</div>
+<p>This can make sense if we only want to load that bundle under certain conditions,
+like in a specific context.
+This could lead to a smaller size of loaded static resources, when they are not all needed.</p>
+<p>After making changes to the registry, like adding resources to a bundle,
+you have to reload the registry configuration via an upgrade step, or via a reinstall of the package.</p>
+<p>If you do change the bundle, it has to be built or rebuilt.
+You can do this in the <code class="docutils literal"><span class="pre">&#64;&#64;resourceregistry-controlpanel</span></code> by clicking on
+<em>Build</em> for the bundle involved, or by running the <code class="docutils literal"><span class="pre">plone-compile-resources</span></code>
+script as follows:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>./bin/plone-compile-resources --bundle<span class="o">=</span>plone --site-id<span class="o">=</span>Plone
+</pre></div>
+</div>
+<p>If you have created your own bundle, do the same for this bundle:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>./bin/plone-compile-resources --bundle<span class="o">=</span>tango-bundle --site-id<span class="o">=</span>Plone
+</pre></div>
+</div>
+<p>Default value for <code class="docutils literal"><span class="pre">site-id</span></code> is <code class="docutils literal"><span class="pre">Plone</span></code> so you only need to specify that if you&#8217;re working with a different id for your site object.</p>
+</div>
+<div class="section" id="using-resources-in-less-files">
+<h2>Using resources in LESS-files<a class="headerlink" href="#using-resources-in-less-files" title="Permalink to this headline">¶</a></h2>
+<p>Let&#8217;s have a look at our <code class="docutils literal"><span class="pre">main.less</span></code> file:</p>
+<div class="highlight-sass"><div class="highlight"><pre><span class="cm">/* bundle LESS file that will be compiled into tango-compiled.css */</span>
+
+<span class="c1">// ### PLONE IMPORTS ###</span>
+
+<span class="c1">//*// Font families</span>
+<span class="c1">//@import &quot;@{barceloneta-fonts}&quot;;</span>
+
+<span class="c1">//*// Core variables and mixins</span>
+<span class="k">@import</span> <span class="s">&quot;@{barceloneta-variables}&quot;;</span>
+    <span class="k">@import</span> <span class="s">&quot;@{barceloneta-mixin-prefixes}&quot;;</span>
+    <span class="k">@import</span> <span class="s">&quot;@{barceloneta-mixin-tabfocus}&quot;;</span>
+    <span class="k">@import</span> <span class="s">&quot;@{barceloneta-mixin-images}&quot;;</span>
+    <span class="k">@import</span> <span class="s">&quot;@{barceloneta-mixin-forms}&quot;;</span>
+    <span class="k">@import</span> <span class="s">&quot;@{barceloneta-mixin-borderradius}&quot;;</span>
+    <span class="k">@import</span> <span class="s">&quot;@{barceloneta-mixin-buttons}&quot;;</span>
+    <span class="k">@import</span> <span class="s">&quot;@{barceloneta-mixin-clearfix}&quot;;</span>
+<span class="c1">//  @import &quot;@{barceloneta-mixin-gridframework}&quot;;</span>
+<span class="c1">//  @import &quot;@{barceloneta-mixin-grid}&quot;;</span>
+
+
+<span class="c1">//*// Reset and dependencies</span>
+<span class="k">@import</span> <span class="s">&quot;@{barceloneta-normalize}&quot;;</span>
+<span class="k">@import</span> <span class="s">&quot;@{barceloneta-print}&quot;;</span>
+
+<span class="c1">//*// Core CSS</span>
+<span class="k">@import</span> <span class="s">&quot;@{barceloneta-scaffolding}&quot;;</span>
+<span class="k">@import</span> <span class="s">&quot;@{barceloneta-type}&quot;;</span>
+<span class="k">@import</span> <span class="s">&quot;@{barceloneta-code}&quot;;</span>
+<span class="c1">//@import &quot;@{barceloneta-deco}&quot;; //uncomment for deco variant</span>
+<span class="c1">//@import &quot;@{barceloneta-grid}&quot;;</span>
+<span class="k">@import</span> <span class="s">&quot;@{barceloneta-tables}&quot;;</span>
+<span class="k">@import</span> <span class="s">&quot;@{barceloneta-forms}&quot;;</span>
+<span class="k">@import</span> <span class="s">&quot;@{barceloneta-buttons}&quot;;</span>
+<span class="k">@import</span> <span class="s">&quot;@{barceloneta-states}&quot;;</span>
+
+<span class="c1">//*// Components</span>
+<span class="k">@import</span> <span class="s">&quot;@{barceloneta-breadcrumbs}&quot;;</span>
+<span class="k">@import</span> <span class="s">&quot;@{barceloneta-pagination}&quot;;</span>
+<span class="k">@import</span> <span class="s">&quot;@{barceloneta-formtabbing}&quot;;</span>
+<span class="k">@import</span> <span class="s">&quot;@{barceloneta-views}&quot;;</span>
+<span class="k">@import</span> <span class="s">&quot;@{barceloneta-thumbs}&quot;;</span>
+<span class="k">@import</span> <span class="s">&quot;@{barceloneta-alerts}&quot;;</span>
+<span class="k">@import</span> <span class="s">&quot;@{barceloneta-portlets}&quot;;</span>
+<span class="k">@import</span> <span class="s">&quot;@{barceloneta-controlpanels}&quot;;</span>
+<span class="k">@import</span> <span class="s">&quot;@{barceloneta-tags}&quot;;</span>
+<span class="k">@import</span> <span class="s">&quot;@{barceloneta-contents}&quot;;</span>
+
+<span class="c1">//*// Patterns</span>
+<span class="k">@import</span> <span class="s">&quot;@{barceloneta-accessibility}&quot;;</span>
+<span class="k">@import</span> <span class="s">&quot;@{barceloneta-toc}&quot;;</span>
+<span class="k">@import</span> <span class="s">&quot;@{barceloneta-dropzone}&quot;;</span>
+<span class="k">@import</span> <span class="s">&quot;@{barceloneta-modal}&quot;;</span>
+<span class="k">@import</span> <span class="s">&quot;@{barceloneta-pickadate}&quot;;</span>
+<span class="k">@import</span> <span class="s">&quot;@{barceloneta-sortable}&quot;;</span>
+<span class="k">@import</span> <span class="s">&quot;@{barceloneta-tablesorter}&quot;;</span>
+<span class="k">@import</span> <span class="s">&quot;@{barceloneta-tooltip}&quot;;</span>
+<span class="k">@import</span> <span class="s">&quot;@{barceloneta-tree}&quot;;</span>
+
+<span class="c1">//*// Structure</span>
+<span class="k">@import</span> <span class="s">&quot;@{barceloneta-header}&quot;;</span>
+<span class="k">@import</span> <span class="s">&quot;@{barceloneta-sitenav}&quot;;</span>
+<span class="k">@import</span> <span class="s">&quot;@{barceloneta-main}&quot;;</span>
+<span class="c1">//@import &quot;@{barceloneta-footer}&quot;;</span>
+<span class="k">@import</span> <span class="s">&quot;@{barceloneta-loginform}&quot;;</span>
+<span class="k">@import</span> <span class="s">&quot;@{barceloneta-sitemap}&quot;;</span>
+
+<span class="c1">//*// Products</span>
+<span class="k">@import</span> <span class="s">&quot;@{barceloneta-event}&quot;;</span>
+<span class="k">@import</span> <span class="s">&quot;@{barceloneta-image}&quot;;</span>
+<span class="k">@import</span> <span class="s">&quot;@{barceloneta-behaviors}&quot;;</span>
+<span class="k">@import</span> <span class="s">&quot;@{barceloneta-discussion}&quot;;</span>
+<span class="k">@import</span> <span class="s">&quot;@{barceloneta-search}&quot;;</span>
+
+<span class="c1">//*// Products</span>
+<span class="k">@import</span> <span class="s">&quot;@{barceloneta-event}&quot;;</span>
+<span class="k">@import</span> <span class="s">&quot;@{barceloneta-image}&quot;;</span>
+<span class="k">@import</span> <span class="s">&quot;@{barceloneta-behaviors}&quot;;</span>
+<span class="k">@import</span> <span class="s">&quot;@{barceloneta-discussion}&quot;;</span>
+<span class="k">@import</span> <span class="s">&quot;@{barceloneta-search}&quot;;</span>
+
+<span class="c1">// ### END OF PLONE IMPORTS ###</span>
+
+<span class="c1">// include theme css as less</span>
+<span class="k">@import</span> <span class="s">(less)</span> <span class="s">&quot;business-casual.css&quot;;</span>
+
+<span class="c1">// include our custom less</span>
+<span class="k">@import</span> <span class="s">&quot;custom.less&quot;;</span>
+</pre></div>
+</div>
+<p>Here we use different functionality of LESS and the resource registry.</p>
+<p>At the bottom line for example, we use LESS-imports to import a second LESS file
+which contains our custom LESS statements.
+And we also import a CSS-file of the downloaded theme as a LESS-file, so we can
+change parts of it using LESS-syntax.</p>
+<p>Besides these two, we import stuff from Barceloneta. Here we can see that we use
+the names of the registered resource registry resources of the Barceloneta theme
+to import them. So if for example we want to import our registered resource
+<code class="docutils literal"><span class="pre">tango-main</span></code>, we could import it as follows in our LESS-file:</p>
+<div class="highlight-css"><div class="highlight"><pre><span class="k">@import</span> <span class="s2">&quot;@{tango-main}&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>or even with the <code class="docutils literal"><span class="pre">reference</span></code> option:</p>
+<div class="highlight-css"><div class="highlight"><pre><span class="k">@import</span> <span class="o">(</span><span class="nt">reference</span><span class="o">)</span> <span class="s2">&quot;@{tango-main}&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>If you use the <code class="docutils literal"><span class="pre">reference</span></code> option on LESS-import, only the parts of this file
+which are used are included in the compiled version (CSS).</p>
+<p>So for example you have to trigger it like:</p>
+<div class="highlight-css"><div class="highlight"><pre><span class="nc">.greenBox</span><span class="p">{</span>
+    <span class="o">&amp;:</span><span class="n">extend</span><span class="p">(</span><span class="o">.</span><span class="n">box</span><span class="p">);</span>
+    <span class="k">background</span><span class="o">:</span> <span class="nb">green</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>or with the <code class="docutils literal"><span class="pre">all</span></code> option, see <a class="reference external" href="http://lesscss.org/features/#extend-feature">http://lesscss.org/features/#extend-feature</a>:</p>
+<div class="highlight-css"><div class="highlight"><pre><span class="nc">.greenBox</span><span class="p">{</span>
+    <span class="o">&amp;:</span><span class="n">extend</span><span class="p">(</span><span class="o">.</span><span class="n">box</span> <span class="n">all</span><span class="p">);</span>
+    <span class="k">background</span><span class="o">:</span> <span class="nb">green</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Or just use it as a mixin like this:</p>
+<div class="highlight-css"><div class="highlight"><pre><span class="nc">.documentDescription</span><span class="p">{</span>
+  <span class="o">.</span><span class="n">intro</span><span class="o">-</span><span class="k">text</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="adv-diazo.html" class="btn btn-neutral float-right" title="9. Advanced Diazo" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="tinymce-templates.html" class="btn btn-neutral" title="7. Using TinyMCE templates" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright The text and illustrations in this website are licensed by the Plone Foundation under a Creative Commons Attribution 4.0 International license..
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.2.5a',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .admonition-title").show();
+        $(".toggle .admonition-title").click(function() {
+            $(this).parent().children().not(".admonition-title").toggle(400);
+            $(this).parent().children(".admonition-title").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

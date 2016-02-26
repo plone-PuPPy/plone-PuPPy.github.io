@@ -1,0 +1,375 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>6. Through-The-Web development &mdash; Mastering Plone 1.2.5a documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../about.html"/>
+    <link rel="top" title="Mastering Plone 1.2.5a documentation" href="../index.html"/>
+        <link rel="up" title="JavaScript for Plone Developers" href="index.html"/>
+        <link rel="next" title="7. Scratchpad" href="javascript-scratchpad.html"/>
+        <link rel="prev" title="5. Writing documentation for Mockup" href="mockup-writing-documentation.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Mastering Plone
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.2.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About Mastering Plone</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">2. Installation &amp; Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plone_training_config/instructions.html">3. Installing Plone for the Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../anatomy.html">4. The Anatomy of Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../case.html">5. The Case Study</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../features.html">6. The Features of Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plone5.html">7. What&#8217;s New in Plone 5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuring_customizing.html">8. Configuring and Customizing Plone &#8220;Through The Web&#8221;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../extending.html">9. Extending Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../add-ons.html">10. Extend Plone With Add-On Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../theming/index.html">11. Mastering Plone 5: Theming</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">JavaScript for Plone Developers</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="training_installation.html">1. Installing Plone and example packages for the Training</a></li>
+<li class="toctree-l2"><a class="reference internal" href="development-process.html">2. The JavaScript development process in Plone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="requirejs-modules.html">3. RequireJS and JavaScript modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mockup.html">4. Mockup - A Patternslib based collection of components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mockup-writing-documentation.html">5. Writing documentation for Mockup</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">6. Through-The-Web development</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#portal-javascript-portal-css">portal_javascript &amp; portal_css</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#resource-registries">Resource Registries</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#add-files">Add files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create-the-resource">Create the resource</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create-the-bundle-and-wire-everything-up">Create the bundle and wire everything up</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build-the-bundle">Build the bundle</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="javascript-scratchpad.html">7. Scratchpad</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../dexterity.html">12. Dexterity I: &#8220;Through The Web&#8221;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../buildout_1.html">13. Buildout I</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eggs1.html">14. Write Your Own Add-Ons to Customize Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../export_code.html">15. Return to Dexterity: Moving contenttypes into Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../views_1.html">16. Views I</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zpt.html">17. Page Templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zpt_2.html">18. Customizing Existing Templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../views_2.html">19. Views II: A Default View for &#8220;Talk&#8221;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../views_3.html">20. Views III: A Talk List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testing.html">21. Testing in Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../behaviors_1.html">22. Behaviors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../viewlets_1.html">23. Writing Viewlets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">24. Programming Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ide.html">25. IDEs and Editors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dexterity_2.html">26. Dexterity Types II: Growing Up</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../custom_search.html">27. Custom Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../events.html">28. Turning Talks into Events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_generated_content.html">29. User Generated Content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources.html">30. Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../thirdparty_behaviors.html">31. Using Third-Party Behaviors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dexterity_3.html">32. Dexterity Types III: Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../relations.html">33. Relations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../registry.html">34. Storing Settings in the Registry and create control-panels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eggs2.html">35. Creating Reusable Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../behaviors_2.html">36. More Complex Behaviors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../viewlets_2.html">37. A Viewlet for the Votable Behavior</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reusable.html">38. Making Our Package Reusable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../embed.html">39. Using starzel.votable_behavior in ploneconf.site</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../deployment_code.html">40. Releasing Your Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../deployment_sites.html">41. Buildout II: Getting Ready for Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../frontpage.html">42. Creating a Dynamic Front Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../future_of_plone.html">43. The Future of Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../optional.html">44. Optional</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../CHANGES.html">Changelog</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Mastering Plone</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">JavaScript for Plone Developers</a> &raquo;</li>
+      
+    <li>6. Through-The-Web development</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="through-the-web-development">
+<h1>6. Through-The-Web development<a class="headerlink" href="#through-the-web-development" title="Permalink to this headline">¶</a></h1>
+<p>It is possible to include Javascript functionality without the need to know about any of the tools involved.
+This is not reccommended for when you need to do a complex and modular implementation.</p>
+<div class="section" id="portal-javascript-portal-css">
+<h2>portal_javascript &amp; portal_css<a class="headerlink" href="#portal-javascript-portal-css" title="Permalink to this headline">¶</a></h2>
+<p>These two portal tools are no longer used in Plone 5.
+They are still present, but nothing should be included in them.</p>
+</div>
+<div class="section" id="resource-registries">
+<h2>Resource Registries<a class="headerlink" href="#resource-registries" title="Permalink to this headline">¶</a></h2>
+<p>This is the new tool included in Plone 5.
+From here we will manage everything related to Javascript and CSS resources.
+It can be found right at the bottom of Plone&#8217;s Control Panel, in the <code class="docutils literal"><span class="pre">Advanced</span></code> section.</p>
+<div class="figure align-center">
+<img alt="../_images/resource_registry.png" src="../_images/resource_registry.png" />
+</div>
+<div class="section" id="add-files">
+<h3>Add files<a class="headerlink" href="#add-files" title="Permalink to this headline">¶</a></h3>
+<p>We are going to include 2 new resources, a Javascript file, and a LESS file.</p>
+<p>The Javascript will look like this:</p>
+<div class="highlight-js"><div class="highlight"><pre><span class="nx">$</span><span class="p">(</span> <span class="nb">document</span> <span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">links</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">);</span>
+    <span class="nx">links</span><span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;custom-background&#39;</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>The LESS will look like this:</p>
+<div class="highlight-css"><div class="highlight"><pre><span class="nt">a</span><span class="nc">.custom-background</span><span class="p">{</span>
+    <span class="k">background-color</span><span class="o">:</span> <span class="m">#F7E1CF</span><span class="p">;</span>
+    <span class="k">color</span><span class="o">:</span> <span class="nb">black</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Go to the <code class="docutils literal"><span class="pre">Overrides</span></code> tab</li>
+<li>Click the <code class="docutils literal"><span class="pre">Add</span> <span class="pre">file</span></code> button</li>
+<li>Name the new file <code class="docutils literal"><span class="pre">++plone++static/custom-links.js</span></code></li>
+<li>Paste the contents of the Javascript section into the textarea</li>
+<li>Click <code class="docutils literal"><span class="pre">Save</span></code></li>
+<li>Click the <code class="docutils literal"><span class="pre">Add</span> <span class="pre">file</span></code> button again</li>
+<li>Name the new file <code class="docutils literal"><span class="pre">++plone++static/custom-links.less</span></code></li>
+<li>Paste the contents of the CSS section into the textarea</li>
+<li>Click <code class="docutils literal"><span class="pre">Save</span></code></li>
+</ul>
+</div>
+<div class="section" id="create-the-resource">
+<h3>Create the resource<a class="headerlink" href="#create-the-resource" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Go to the <code class="docutils literal"><span class="pre">Registry</span></code> tab</li>
+<li>Click the <code class="docutils literal"><span class="pre">Add</span> <span class="pre">resource</span></code> button</li>
+<li>Name it <code class="docutils literal"><span class="pre">training-custom-links</span></code></li>
+<li>Under <code class="docutils literal"><span class="pre">JS</span></code> enter <code class="docutils literal"><span class="pre">++plone++static/custom-links.js</span></code></li>
+<li>For the <code class="docutils literal"><span class="pre">CSS/LESS</span></code> section, click <code class="docutils literal"><span class="pre">Add</span></code></li>
+<li>Enter <code class="docutils literal"><span class="pre">++plone++static/custom-links.less</span></code></li>
+</ul>
+<p>It should look somthing like this:</p>
+<div class="figure align-center">
+<img alt="../_images/add_resource.png" src="../_images/add_resource.png" />
+</div>
+<ul class="simple">
+<li>Click <code class="docutils literal"><span class="pre">Save</span></code></li>
+</ul>
+</div>
+<div class="section" id="create-the-bundle-and-wire-everything-up">
+<h3>Create the bundle and wire everything up<a class="headerlink" href="#create-the-bundle-and-wire-everything-up" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Go to the <code class="docutils literal"><span class="pre">Registry</span></code> tab</li>
+<li>Click the <code class="docutils literal"><span class="pre">Add</span> <span class="pre">bundle</span></code> button</li>
+<li>Name it <code class="docutils literal"><span class="pre">training-custom-bundle</span></code></li>
+<li>Under <code class="docutils literal"><span class="pre">Resources</span></code> enter <code class="docutils literal"><span class="pre">training-custom-links</span></code></li>
+<li>For the <code class="docutils literal"><span class="pre">Depends</span></code> section, we&#8217;ll use <code class="docutils literal"><span class="pre">plone</span></code></li>
+<li>Make sure <code class="docutils literal"><span class="pre">Enabled</span></code> is checked</li>
+</ul>
+<p>It should look somthing like this:</p>
+<div class="figure align-center">
+<img alt="../_images/add_bundle.png" src="../_images/add_bundle.png" />
+</div>
+<ul class="simple">
+<li>Click <code class="docutils literal"><span class="pre">Save</span></code></li>
+</ul>
+</div>
+<div class="section" id="build-the-bundle">
+<h3>Build the bundle<a class="headerlink" href="#build-the-bundle" title="Permalink to this headline">¶</a></h3>
+<p>In order for changes to be included, you need to build your bundle.
+For doing this, you just need to click the <code class="docutils literal"><span class="pre">Build</span></code> under the bundle you want to build.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="javascript-scratchpad.html" class="btn btn-neutral float-right" title="7. Scratchpad" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="mockup-writing-documentation.html" class="btn btn-neutral" title="5. Writing documentation for Mockup" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright The text and illustrations in this website are licensed by the Plone Foundation under a Creative Commons Attribution 4.0 International license..
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.2.5a',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .admonition-title").show();
+        $(".toggle .admonition-title").click(function() {
+            $(this).parent().children().not(".admonition-title").toggle(400);
+            $(this).parent().children(".admonition-title").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

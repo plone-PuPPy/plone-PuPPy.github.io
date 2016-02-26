@@ -1,0 +1,647 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>4. Plone 5 Resource Registry &mdash; Mastering Plone 1.2.5a documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+        <link rel="author" title="About these documents"
+              href="../about.html"/>
+    <link rel="top" title="Mastering Plone 1.2.5a documentation" href="../index.html"/>
+        <link rel="up" title="12. JavaScript for Plone Developers" href="index.html"/>
+        <link rel="next" title="5. Mockup - A Patternslib based collection of components" href="mockup.html"/>
+        <link rel="prev" title="3. RequireJS and JavaScript modules" href="requirejs-modules.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../index.html" class="fa fa-home"> Mastering Plone</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About Mastering Plone</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../about.html#upcoming-trainings">Upcoming Trainings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../about.html#previous-trainings">Previous Trainings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../about.html#trainers">Trainers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../about.html#using-the-documentation-for-a-training">Using the documentation for a training</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../about.html#building-the-documentation-locally">Building the documentation locally</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../about.html#build-new">Build new</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../about.html#contributing">Contributing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../about.html#license">License</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../theming/index.html">11. Mastering Plone 5: Theming</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../theming/basic.html">1. Basic: customizing logo and CSS of default theme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../theming/ttw-advanced.html">2. TTW advanced: intro to Diazo Theming, build custom rules through the web</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../theming/static-theme.html">3. Make it reproducible basic: static theme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../theming/theme-package.html">4. Create a Plone theme python package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../theming/creating-customizing-templates.html">5. Creating and customizing Plone templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../theming/creating-initial-content-for-the-theme.html">6. Creating initial content for the theme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../theming/tinymce-templates.html">7. Using TinyMCE templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../theming/adv-resource-registry.html">8. Advanced resources registry usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../theming/adv-diazo.html">9. Advanced Diazo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../theming/collective-jbot.html">10. Customize template on the fly: collective.jbot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../theming/custom-components.html">11. Creating custom components</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../development_bucarest.html">2. Mastering Plone 5: Development</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro.html">1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation.html">2. Installation &amp; Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plone_training_config/instructions.html">3. Installing Plone for the Training</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plone5.html">4. What&#8217;s New in Plone 5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../case.html">5. The Case Study</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dexterity.html">6. Dexterity I: &#8220;Through The Web&#8221;</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../buildout_1.html">7. Buildout I</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eggs1.html">8. Write Your Own Add-Ons to Customize Plone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../export_code.html">9. Return to Dexterity: Moving contenttypes into Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../views_1.html">10. Views I</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../zpt.html">11. Page Templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../zpt_2.html">12. Customizing Existing Templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../views_2.html">13. Views II: A Default View for &#8220;Talk&#8221;</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../views_3.html">14. Views III: A Talk List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../testing.html">15. Testing in Plone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../behaviors_1.html">16. Behaviors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../viewlets_1.html">17. Writing Viewlets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html">18. Programming Plone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ide.html">19. IDEs and Editors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dexterity_2.html">20. Dexterity Types II: Growing Up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../custom_search.html">21. Custom Search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../events.html">22. Turning Talks into Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user_generated_content.html">23. User Generated Content</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../resources.html">24. Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../thirdparty_behaviors.html">25. Using Third-Party Behaviors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dexterity_3.html">26. Dexterity Types III: Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../relations.html">27. Relations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eggs2.html">28. Creating Reusable Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../behaviors_2.html">29. More Complex Behaviors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../viewlets_2.html">30. A Viewlet for the Votable Behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reusable.html">31. Making Our Package Reusable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../embed.html">32. Using starzel.votable_behavior in ploneconf.site</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../deployment_code.html">33. Releasing Your Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../deployment_sites.html">34. Buildout II: Getting Ready for Deployment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../frontpage.html">35. Creating a Dynamic Front Page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../future_of_plone.html">36. The Future of Plone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../optional.html">37. Optional</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">12. JavaScript for Plone Developers</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="training_installation.html">1. Installing Plone and example packages for the Training</a></li>
+<li class="toctree-l2"><a class="reference internal" href="development-process.html">2. The JavaScript development process in Plone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="requirejs-modules.html">3. RequireJS and JavaScript modules</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">4. Plone 5 Resource Registry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mockup.html">5. Mockup - A Patternslib based collection of components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mockup-writing-documentation.html">6. Writing documentation for Mockup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript-3-ttw.html">7. Through-The-Web development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript-scratchpad.html">8. Scratchpad</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Mastering Plone</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">12. JavaScript for Plone Developers</a> &raquo;</li>
+      
+    <li>4. Plone 5 Resource Registry</li>
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="plone-5-resource-registry">
+<h1>4. Plone 5 Resource Registry<a class="headerlink" href="#plone-5-resource-registry" title="Permalink to this headline">¶</a></h1>
+<div class="admonition-description admonition">
+<p class="first admonition-title">Description</p>
+<p class="last">For JavaScript and CSS development, Plone 5 makes extensive use of tools like Bower, Grunt, RequireJS and Less for an optimized development process.
+The JavaScript and CSS resources are managed in the Resource Registry.
+The Resource Registry was completly rewritten in Plone 5 to support the new dependency based RequireJS approach.
+It also allows us to build Less and RequireJS bundles Through-The-Web for a low entry barrier.
+This chapter should give you a good understanding of the new Resource Registry.</p>
+</div>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#introduction-to-plone-5-resources" id="id1">Introduction to Plone 5 resources</a></li>
+<li><a class="reference internal" href="#resources" id="id2">Resources</a><ul>
+<li><a class="reference internal" href="#default-resources-on-plone" id="id3">Default resources on Plone</a></li>
+<li><a class="reference internal" href="#the-plone-static-traversal-namespace" id="id4">The ++plone++static traversal namespace</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#bundles" id="id5">Bundles</a><ul>
+<li><a class="reference internal" href="#bundle-compilation" id="id6">Bundle compilation</a></li>
+<li><a class="reference internal" href="#default-plone-bundles" id="id7">Default Plone bundles</a></li>
+<li><a class="reference internal" href="#the-legacy-bundle" id="id8">The legacy bundle</a></li>
+<li><a class="reference internal" href="#adding-or-removing-bundles-from-a-request" id="id9">Adding or removing bundles from a request</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#diazo-bundles" id="id10">Diazo Bundles</a></li>
+<li><a class="reference internal" href="#migrating-older-code-to-the-new-resource-registry" id="id11">Migrating older code to the new resource registry</a><ul>
+<li><a class="reference internal" href="#old-registry-migration-and-compatibility" id="id12">Old registry migration and compatibility</a></li>
+<li><a class="reference internal" href="#updating-non-amd-scripts" id="id13">Updating non-AMD scripts</a></li>
+<li><a class="reference internal" href="#usage-of-define-and-require-and-the-mismatched-anonymous-define-error" id="id14">Usage of <tt class="docutils literal"><span class="pre">define</span></tt> and <tt class="docutils literal"><span class="pre">require</span></tt> and the <tt class="docutils literal"><span class="pre">mismatched</span> <span class="pre">anonymous</span> <span class="pre">define</span></tt> error</a></li>
+<li><a class="reference internal" href="#including-non-requirejs-scripts-in-a-diazo-theme" id="id15">Including non-RequireJS scripts in a Diazo theme</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="introduction-to-plone-5-resources">
+<h2><a class="toc-backref" href="#id1">Introduction to Plone 5 resources</a><a class="headerlink" href="#introduction-to-plone-5-resources" title="Permalink to this headline">¶</a></h2>
+<p>Plone 5 introduces new concepts for working with JavaScript and CSS in Plone.</p>
+<p>We finally have a solution to define JavaScript modules and their dependencies - in contrast of the previous approach, where all dependencies had to be loaded in order.
+We achieve that with the tool RequireJS, which follows the Asynchronous Module Definition (AMD) approach.
+We chose AMD over other module loading implementations(like CommonJS) because AMD can be used in non-compiled form in the browser and also compiled Through-The-Web.
+This way, we can also support a &#8220;development mode&#8221; like in Plone versions prior to 5, where changes in the JavaScript sources are instantly reflected.</p>
+<p>CSS can be developed with the CSS compiler Less.
+Who ever worked with Less probably don&#8217;t want to edit CSS directly - especially for bigger projects. Less gives us a lot of nice features like inheritance, scoping, functions, mixins and variables, which are not available in pure CSS.
+Again, the availability of a JavaScript based compiler made a good reason to choose Less over Sass.</p>
+<p>Our concept of a resource is made of a JavaScript and/or some Less or CSS files.</p>
+</div>
+<div class="section" id="resources">
+<h2><a class="toc-backref" href="#id2">Resources</a><a class="headerlink" href="#resources" title="Permalink to this headline">¶</a></h2>
+<p>Resources are the main unit of the resource registry.
+A resource consists of a JavaScript file and/or some CSS/Less files.
+A resource is identified by RequireJS via a name.</p>
+<p>Resources - as well as bundles - are configured by using <tt class="docutils literal"><span class="pre">plone.registry</span></tt>.
+From the resource configuration a RequireJS configuration is build to compile
+bundles.
+Like in RequireJS, we can also include non-module, legacy resources, which do not make use of the RequireJS <tt class="docutils literal"><span class="pre">define</span></tt> and <tt class="docutils literal"><span class="pre">require</span></tt> methods.
+For this, the &#8220;shim&#8221; options are available, as explained below.</p>
+<p>An example of a resource definition on registry.xml:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;records</span> <span class="na">prefix=</span><span class="s">&quot;plone.resources/tinymce&quot;</span>
+         <span class="na">interface=</span><span class="s">&#39;Products.CMFPlone.interfaces.IResourceRegistry&#39;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;value</span> <span class="na">key=</span><span class="s">&quot;js&quot;</span><span class="nt">&gt;</span>++plone++static/components/tinymce/tinymce.js<span class="nt">&lt;/value&gt;</span>
+  <span class="nt">&lt;value</span> <span class="na">key=</span><span class="s">&quot;export&quot;</span><span class="nt">&gt;</span>window.tinyMCE<span class="nt">&lt;/value&gt;</span>
+  <span class="nt">&lt;value</span> <span class="na">key=</span><span class="s">&quot;init&quot;</span><span class="nt">&gt;</span>function () { this.tinyMCE.DOM.events.domLoaded = true; return this.tinyMCE; }<span class="nt">&lt;/value&gt;</span>
+  <span class="nt">&lt;value</span> <span class="na">key=</span><span class="s">&quot;css&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;element&gt;</span>++plone++static/components/tinymce/skins/lightgray/skin.min.css<span class="nt">&lt;/element&gt;</span>
+    <span class="nt">&lt;element&gt;</span>++plone++static/components/tinymce/skins/lightgray/content.inline.min.css<span class="nt">&lt;/element&gt;</span>
+  <span class="nt">&lt;/value&gt;</span>
+<span class="nt">&lt;/records&gt;</span>
+</pre></div>
+</div>
+<p>The possible options of a resource are:</p>
+<ul class="simple">
+<li>js : URL of the JavaScript file</li>
+<li>css: List of CSS/Less elements.</li>
+<li>url: Base URL for loading additional resources like text files.
+See below for an example.</li>
+</ul>
+<p>These are the &#8220;Shim&#8221; options for a resource to support JavaScript code, which doesn&#8217;t define modules or dependencies.
+We call them &#8220;legacy&#8221; JavaScript code, as it doesn&#8217;t follow our proposed best practices.
+For more information see: <a class="reference external" href="http://requirejs.org/docs/api.html#config-shim">http://requirejs.org/docs/api.html#config-shim</a></p>
+<ul class="simple">
+<li>export: Shim export option to define a global variable to where the JavaScript module should be made available.</li>
+<li>depends: Shim depends option to define which other RequireJS resources should be loaded before this shim module.</li>
+<li>init: Shim init option to define some JavaScript code to be run on initialization.</li>
+</ul>
+<p>The URL option allows you to define the base url for loading text resources like XML templates.
+See the following for an example:</p>
+<p>In registry.xml:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;records</span> <span class="na">prefix=</span><span class="s">&quot;plone.resources/mockup-patterns-structure&quot;</span>
+        <span class="na">interface=</span><span class="s">&#39;Products.CMFPlone.interfaces.IResourceRegistry&#39;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;value</span> <span class="na">key=</span><span class="s">&quot;js&quot;</span><span class="nt">&gt;</span>++resource++mockup/structure/pattern.js<span class="nt">&lt;/value&gt;</span>
+    <span class="nt">&lt;value</span> <span class="na">key=</span><span class="s">&quot;url&quot;</span><span class="nt">&gt;</span>++resource++mockup/structure<span class="nt">&lt;/value&gt;</span>
+    <span class="nt">&lt;value</span> <span class="na">key=</span><span class="s">&quot;css&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;element&gt;</span>++resource++mockup/structure/less/pattern.structure.less<span class="nt">&lt;/element&gt;</span>
+    <span class="nt">&lt;/value&gt;</span>
+<span class="nt">&lt;/records&gt;</span>
+</pre></div>
+</div>
+<p>In mockup/patterns/structure/js/views/actionmenu.js:</p>
+<div class="highlight-python"><div class="highlight"><pre>define([
+  &#39;jquery&#39;,
+  &#39;underscore&#39;,
+  &#39;backbone&#39;,
+  &#39;mockup-ui-url/views/base&#39;,
+  &#39;mockup-utils&#39;,
+  &#39;text!mockup-patterns-structure-url/templates/actionmenu.xml&#39;,
+  &#39;bootstrap-dropdown&#39;
+], function($, _, Backbone, BaseView, utils, ActionMenuTemplate) {
+&#39;use strict&#39;;
+
+var ActionMenu = BaseView.extend({
+    className: &#39;btn-group actionmenu&#39;,
+    template: _.template(ActionMenuTemplate),
+
+...
+</pre></div>
+</div>
+<div class="section" id="default-resources-on-plone">
+<h3><a class="toc-backref" href="#id3">Default resources on Plone</a><a class="headerlink" href="#default-resources-on-plone" title="Permalink to this headline">¶</a></h3>
+<p>Plone 5 ships with a list of Mockup- and Bower components for Plone 5&#8217;s new
+UI.
+These resources can be found in the static folder (<tt class="docutils literal"><span class="pre">Products.CMFPlone.static</span></tt>), where you can also find the <a class="reference external" href="https://github.com/plone/Products.CMFPlone/blob/master/Products/CMFPlone/static/bower.json">bower.json</a> file.
+The resources are preconfigured in the registry (<a class="reference external" href="https://github.com/plone/Products.CMFPlone/blob/master/Products/CMFPlone/profiles/dependencies/registry.xml">registry.xml</a> in <tt class="docutils literal"><span class="pre">Products.CMFPlone.profiles.dependencies</span></tt>).</p>
+</div>
+<div class="section" id="the-plone-static-traversal-namespace">
+<h3><a class="toc-backref" href="#id4">The ++plone++static traversal namespace</a><a class="headerlink" href="#the-plone-static-traversal-namespace" title="Permalink to this headline">¶</a></h3>
+<p>We have a new <tt class="docutils literal"><span class="pre">plone.resource</span></tt> based traversal namespace called <tt class="docutils literal"><span class="pre">++plone++static</span></tt>.
+It points to the <tt class="docutils literal"><span class="pre">Products.CMFPlone.static</span></tt> folder.
+The interesting thing with Plone.resource based resources is, that they can be stored in the ZODB (where they are looked up first, by default) or in the filesystem.
+This allows us to customize filesystem based resources Through-The-Web.</p>
+<p>This is how the <tt class="docutils literal"><span class="pre">++plone++static</span></tt> directory resource is configured:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;plone:static</span>
+    <span class="na">directory=</span><span class="s">&quot;static&quot;</span>
+    <span class="na">type=</span><span class="s">&quot;plone&quot;</span>
+    <span class="na">name=</span><span class="s">&quot;static&quot;</span>
+    <span class="nt">/&gt;</span>
+</pre></div>
+</div>
+<p>Now we can access the contents within the &#8220;static&#8221; folder by using the URL part <tt class="docutils literal"><span class="pre">++plone++myresources/</span></tt> and append the path to the resource under &#8220;static&#8221;.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">When providing static resources (JavaScript/Less/CSS) for Plone 5&#8217;s resource registry, use <tt class="docutils literal"><span class="pre">plone.resource</span></tt> based resources instead of Zope&#8217;s browser resources. The latter are cached heavily and you won&#8217;t get your changes compiled into bundles, even after Zope restarts.</p>
+</div>
+</div>
+</div>
+<div class="section" id="bundles">
+<h2><a class="toc-backref" href="#id5">Bundles</a><a class="headerlink" href="#bundles" title="Permalink to this headline">¶</a></h2>
+<p>A bundle is a set of resources.
+Bundles can group resources for different purposes - like the &#8220;plone&#8221; bundle for all users or &#8220;plone-logged-in&#8221; for only logged in users.
+Only bundles are loaded in a Plone site (well - there is an exception.
+You can register individual resources to be loaded for a specific request via an API method.
+More on this later).</p>
+<p>For production environments you will want to compile your bundles and combine and minify all the necessary resources including their dependencies (which are now well defined) into a single JavaScript and CSS file.
+This minimizes the number of web requests and the payload of data send over the network.
+In Production mode, only one or two files are included in the output: a JavaScript and a CSS file.</p>
+<p>In development mode, each bundle includes all of their resources in the rendered site as individual resource with individual requests.
+This can lead to a lot of requests and high response times, though the RequireJS loads it&#8217;s dependencies asynchronously.
+In development mode, modifications to the resources are instantly reflected without the need to compile a bundle beforehand.</p>
+<p>When developing an add-on you might want to create your own bundle Alternatively, you can register your add-on code to be included in Plone&#8217;s default <tt class="docutils literal"><span class="pre">plone</span></tt> bundle.</p>
+<p>For single pages like the theming control panel, you can define a customized bundle and only include that for this page.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">A bundle can depend on another.
+This is mainly used for the order of inclusion in the rendered content and mostly relevant for legacy bundles.
+Currently, bundle dependencies don&#8217;t make use of RequireJS dependencies.
+This means, each bundle gets all of their dependencies compiled in, even if it was already used for another bundle.
+This raises the response payload unnecessarily.
+To avoid this, add your resources to existing bundles, like the &#8220;plone&#8221; bundle.</p>
+</div>
+<p>Examples:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;records</span> <span class="na">prefix=</span><span class="s">&quot;plone.bundles/plone&quot;</span>
+            <span class="na">interface=</span><span class="s">&#39;Products.CMFPlone.interfaces.IBundleRegistry&#39;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;value</span> <span class="na">key=</span><span class="s">&quot;resources&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;element&gt;</span>plone<span class="nt">&lt;/element&gt;</span>
+  <span class="nt">&lt;/value&gt;</span>
+  <span class="nt">&lt;value</span> <span class="na">key=</span><span class="s">&quot;enabled&quot;</span><span class="nt">&gt;</span>True<span class="nt">&lt;/value&gt;</span>
+  <span class="nt">&lt;value</span> <span class="na">key=</span><span class="s">&quot;jscompilation&quot;</span><span class="nt">&gt;</span>++plone++static/plone-compiled.js<span class="nt">&lt;/value&gt;</span>
+  <span class="nt">&lt;value</span> <span class="na">key=</span><span class="s">&quot;csscompilation&quot;</span><span class="nt">&gt;</span>++plone++static/plone-compiled.css<span class="nt">&lt;/value&gt;</span>
+  <span class="nt">&lt;value</span> <span class="na">key=</span><span class="s">&quot;last_compilation&quot;</span><span class="nt">&gt;</span>2014-08-14 00:00:00<span class="nt">&lt;/value&gt;</span>
+<span class="nt">&lt;/records&gt;</span>
+
+<span class="nt">&lt;records</span> <span class="na">prefix=</span><span class="s">&quot;plone.bundles/plone-legacy&quot;</span>
+         <span class="na">interface=</span><span class="s">&#39;Products.CMFPlone.interfaces.IBundleRegistry&#39;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;value</span> <span class="na">key=</span><span class="s">&quot;resources&quot;</span> <span class="na">purge=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;element&gt;</span>plone_javascript_variables<span class="nt">&lt;/element&gt;</span>
+    <span class="nt">&lt;element&gt;</span>unlockOnFormUnload<span class="nt">&lt;/element&gt;</span>
+    <span class="nt">&lt;element&gt;</span>table_sorter<span class="nt">&lt;/element&gt;</span>
+    <span class="nt">&lt;element&gt;</span>inline-validation<span class="nt">&lt;/element&gt;</span>
+    <span class="nt">&lt;element&gt;</span>jquery-highlightsearchterms<span class="nt">&lt;/element&gt;</span>
+  <span class="nt">&lt;/value&gt;</span>
+  <span class="nt">&lt;value</span> <span class="na">key=</span><span class="s">&quot;depends&quot;</span><span class="nt">&gt;</span>plone<span class="nt">&lt;/value&gt;</span>
+  <span class="nt">&lt;value</span> <span class="na">key=</span><span class="s">&quot;jscompilation&quot;</span><span class="nt">&gt;</span>++plone++static/plone-legacy-compiled.js<span class="nt">&lt;/value&gt;</span>
+  <span class="nt">&lt;value</span> <span class="na">key=</span><span class="s">&quot;csscompilation&quot;</span><span class="nt">&gt;</span>++plone++static/plone-legacy-compiled.css<span class="nt">&lt;/value&gt;</span>
+  <span class="nt">&lt;value</span> <span class="na">key=</span><span class="s">&quot;last_compilation&quot;</span><span class="nt">&gt;</span>2014-08-14 00:00:00<span class="nt">&lt;/value&gt;</span>
+  <span class="nt">&lt;value</span> <span class="na">key=</span><span class="s">&quot;compile&quot;</span><span class="nt">&gt;</span>False<span class="nt">&lt;/value&gt;</span>
+  <span class="nt">&lt;value</span> <span class="na">key=</span><span class="s">&quot;enabled&quot;</span><span class="nt">&gt;</span>True<span class="nt">&lt;/value&gt;</span>
+<span class="nt">&lt;/records&gt;</span>
+</pre></div>
+</div>
+<p>The possible options for a bundle are:</p>
+<ul class="simple">
+<li>enabled: Enable or disable the bundle.</li>
+<li>depends: Dependency on another bundle.</li>
+<li>resources: List of resources that are included in this bundle.</li>
+<li>compile: Compilation is necessary, if the bundle has any Less or RequireJS resources.
+Set to false, if compilation should not be done.
+Then this bundle can be combined with any other non-compilable bundles.</li>
+<li>expression: TALES expression for conditional inclusion.</li>
+<li>conditionalcomment: Conditional Comment for Internet Explorer hacks.</li>
+</ul>
+<p>The following are for pre-compiled bundles and are automatically set, when the bundle is build Through-The-Web:</p>
+<ul class="simple">
+<li>jscompilation: URL of the compiled and minified JavaScript file.</li>
+<li>csscompilation: URL of the compiled and minified CSS file.</li>
+<li>last_compilation: Date of the last compilation time.</li>
+</ul>
+<div class="section" id="bundle-compilation">
+<h3><a class="toc-backref" href="#id6">Bundle compilation</a><a class="headerlink" href="#bundle-compilation" title="Permalink to this headline">¶</a></h3>
+<p>In order to provide a compiled version for the production mode there are three possibilities:</p>
+<ul class="simple">
+<li>Compile Through-The-Web and store on the ZODB.
+This is done via the resource control panel.</li>
+<li>Compile with a generated Grunt file: <tt class="docutils literal"><span class="pre">./bin/plone-compile-resources</span> <span class="pre">--site-id=myplonesite</span> <span class="pre">--bundle=mybundle</span></tt></li>
+<li>Create your own compilation chain: Using the tool you prefer create a compiled version of your bundle with the correct URLs.</li>
+</ul>
+</div>
+<div class="section" id="default-plone-bundles">
+<h3><a class="toc-backref" href="#id7">Default Plone bundles</a><a class="headerlink" href="#default-plone-bundles" title="Permalink to this headline">¶</a></h3>
+<p>There are three main Plone bundles by default:</p>
+<ul class="simple">
+<li>plone: This is the main compiled bundle with all the JavaScript and CSS components required for the Plone Toolbar and the main Mockup patterns.</li>
+<li>plone-logged-in: This one is only included for logged in users and contains patterns like the &#8220;tinymce&#8221; pattern, the &#8220;querystring&#8221; pattern for collection edit forms and others.</li>
+<li>plone-legacy: This one is a non compiled bundle with code, that doesn&#8217;t use RequireJS and Less.
+Also, Addons which install resources to <tt class="docutils literal"><span class="pre">portal_javascripts</span></tt> or <tt class="docutils literal"><span class="pre">portal_css</span></tt> are registered as resources in the plone-legacy bundle automatically.</li>
+</ul>
+</div>
+<div class="section" id="the-legacy-bundle">
+<h3><a class="toc-backref" href="#id8">The legacy bundle</a><a class="headerlink" href="#the-legacy-bundle" title="Permalink to this headline">¶</a></h3>
+<p>Code which cannot migrated to use RequireJS or uses RequireJS in a way, which is incompatible with Plone&#8217;s use of it (e.g. it&#8217;s using it&#8217;s own RequireJS setup) can be included in the legacy bundle.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Some JavaScript use it&#8217;s own setup of RequireJS.
+Others - like Leaflet 0.7 or DataTables 1.10 - try to register themselves for RequireJS which lead to the infamous &#8220;mismatched anonymous define&#8221; errors (see below).
+You can register those scripts in the legacy bundle.
+The <tt class="docutils literal"><span class="pre">define</span></tt> and <tt class="docutils literal"><span class="pre">require</span></tt> methods are unset before these scripts are included in the output and reset again after all scripts have been included.
+See yourself: <a class="reference external" href="https://github.com/plone/Products.CMFPlone/pull/870/files">https://github.com/plone/Products.CMFPlone/pull/870/files</a></p>
+</div>
+<p>Resources, which are registered into <tt class="docutils literal"><span class="pre">portal_javascripts</span></tt> or <tt class="docutils literal"><span class="pre">portal_css</span></tt> registries via an addon are automatically registered in the legacy bundle and cleared from <tt class="docutils literal"><span class="pre">portal_javascripts</span></tt> and <tt class="docutils literal"><span class="pre">portal_css</span></tt>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">JavaScript, which doesn&#8217;t use RequireJS can still be managed by it by including it and configuring shim options for it.</p>
+</div>
+<p>The resources of non-compiled bundles are all combined and minified.</p>
+<p>Example:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;records</span> <span class="na">prefix=</span><span class="s">&quot;plone.bundles/plone-legacy&quot;</span>
+          <span class="na">interface=</span><span class="s">&#39;Products.CMFPlone.interfaces.IBundleRegistry&#39;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;value</span> <span class="na">key=</span><span class="s">&quot;resources&quot;</span> <span class="na">purge=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;element&gt;</span>plone_javascript_variables<span class="nt">&lt;/element&gt;</span>
+    <span class="nt">&lt;element&gt;</span>unlockOnFormUnload<span class="nt">&lt;/element&gt;</span>
+    <span class="nt">&lt;element&gt;</span>table_sorter<span class="nt">&lt;/element&gt;</span>
+    <span class="nt">&lt;element&gt;</span>inline-validation<span class="nt">&lt;/element&gt;</span>
+    <span class="nt">&lt;element&gt;</span>jquery-highlightsearchterms<span class="nt">&lt;/element&gt;</span>
+  <span class="nt">&lt;/value&gt;</span>
+  <span class="nt">&lt;value</span> <span class="na">key=</span><span class="s">&quot;depends&quot;</span><span class="nt">&gt;</span>plone<span class="nt">&lt;/value&gt;</span>
+  <span class="nt">&lt;value</span> <span class="na">key=</span><span class="s">&quot;jscompilation&quot;</span><span class="nt">&gt;</span>++plone++static/plone-legacy-compiled.js<span class="nt">&lt;/value&gt;</span>
+  <span class="nt">&lt;value</span> <span class="na">key=</span><span class="s">&quot;csscompilation&quot;</span><span class="nt">&gt;</span>++plone++static/plone-legacy-compiled.css<span class="nt">&lt;/value&gt;</span>
+  <span class="nt">&lt;value</span> <span class="na">key=</span><span class="s">&quot;last_compilation&quot;</span><span class="nt">&gt;</span>2014-08-14 00:00:00<span class="nt">&lt;/value&gt;</span>
+  <span class="nt">&lt;value</span> <span class="na">key=</span><span class="s">&quot;compile&quot;</span><span class="nt">&gt;</span>False<span class="nt">&lt;/value&gt;</span>
+  <span class="nt">&lt;value</span> <span class="na">key=</span><span class="s">&quot;enabled&quot;</span><span class="nt">&gt;</span>True<span class="nt">&lt;/value&gt;</span>
+<span class="nt">&lt;/records&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="adding-or-removing-bundles-from-a-request">
+<h3><a class="toc-backref" href="#id9">Adding or removing bundles from a request</a><a class="headerlink" href="#adding-or-removing-bundles-from-a-request" title="Permalink to this headline">¶</a></h3>
+<p>Besides of using the bundle options <tt class="docutils literal"><span class="pre">enabled</span></tt> and <tt class="docutils literal"><span class="pre">expression</span></tt>, where you can globally or conditionally control the inclusion of bundles you also have these options:</p>
+<ul class="simple">
+<li>Controlling via Diazo: Diazo include or exclude specific bundles, no matter if its disabled by default.
+This can be done in the theme&#8217;s <tt class="docutils literal"><span class="pre">manifest.cfg</span></tt> file via the options <tt class="docutils literal"><span class="pre">enabled-bundles</span></tt> and <tt class="docutils literal"><span class="pre">disabled-bundles</span></tt>.
+Those options get a comma separated list of bundle names (TODO: verify &#8220;comma separated list&#8221;).</li>
+<li>A browser page can include or exclude a specific bundle by using the API methods from <tt class="docutils literal"><span class="pre">Products.CMFPlone.resources</span></tt>, no matter if its disabled by default.</li>
+</ul>
+<p>These are the <tt class="docutils literal"><span class="pre">Products.CMFPlone.resources</span></tt> API methods:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">add_bundle_on_request(request,</span> <span class="pre">bundle)</span></tt>: Add a bundle to the current request by specifying it&#8217;s name.</li>
+<li><tt class="docutils literal"><span class="pre">remove_bundle_on_request(request,</span> <span class="pre">bundle)</span></tt>: Remove a bundle to the current request by specifying it&#8217;s name.</li>
+<li><tt class="docutils literal"><span class="pre">add_resource_on_request(request,</span> <span class="pre">bundle)</span></tt>: Add an individual resource to the current request by specifying it&#8217;s name.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="diazo-bundles">
+<h2><a class="toc-backref" href="#id10">Diazo Bundles</a><a class="headerlink" href="#diazo-bundles" title="Permalink to this headline">¶</a></h2>
+<p>The point with Diazo is to create standalone static themes which work without Plone.
+Diazo themes can use - and will use -their own resources and compiling systems.</p>
+<p>Diazo was extended to support bundles.
+Bundles can be defined in the theme <tt class="docutils literal"><span class="pre">barceloneta/theme/manifest.cfg</span></tt> file:</p>
+<div class="highlight-python"><div class="highlight"><pre>enabled-bundles =
+disabled-bundles =
+
+development-css = /++theme++barceloneta/less/barceloneta.plone.less
+production-css = /++theme++barceloneta/less/barceloneta-compiled.css
+tinymce-content-css = /++theme++barceloneta/less/barceloneta-compiled.css
+
+development-js =
+production-js =
+</pre></div>
+</div>
+<p>The configured bundles in the <tt class="docutils literal"><span class="pre">manifest.cfg</span></tt> file are included in the output by the renderer additionally to the ones registered in the resource registry.
+This allows us to just overwrite or drop the <tt class="docutils literal"><span class="pre">link</span></tt> and <tt class="docutils literal"><span class="pre">script</span></tt> tags from the theme but still include the theme-specific resources without having them to register in the resource registry.</p>
+<p>The options are:</p>
+<ul class="simple">
+<li>enabled-bundles / disabled-bundles: List of bundles that should be added or disabled when rendering the Diazo theme.</li>
+<li>development-css / development-js: Uncompiled/unminified Less/CSS file and RequireJS file, which should be included in development environments.
+The compilation is done on the browser side on the fly.</li>
+<li>production-css / production-js: Compiled bundles that should be included in production mode.</li>
+<li>tinymce-content-css: CSS file to include for the TinyMCE editor, so that TinyMCE gives you a best possible WYSIWYG experience.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You have to use your own compilation environment to compile the Diazo bundles.
+This cannot be done via the Resouce Registry or the <tt class="docutils literal"><span class="pre">plone-compile-resources</span></tt> script.</p>
+</div>
+</div>
+<div class="section" id="migrating-older-code-to-the-new-resource-registry">
+<h2><a class="toc-backref" href="#id11">Migrating older code to the new resource registry</a><a class="headerlink" href="#migrating-older-code-to-the-new-resource-registry" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="old-registry-migration-and-compatibility">
+<h3><a class="toc-backref" href="#id12">Old registry migration and compatibility</a><a class="headerlink" href="#old-registry-migration-and-compatibility" title="Permalink to this headline">¶</a></h3>
+<p>The deprecated resource registries <tt class="docutils literal"><span class="pre">portal_css</span></tt> and <tt class="docutils literal"><span class="pre">portal_javascripts</span></tt> have no concept of dependency management.
+They simply allowed you to specify an order in which JavaScript and CSS files should be included the rendered site.
+Of course it was combined and minified for production mode, which was very handy.
+But even here the order did matter a lot.
+If there were conditional include statements per resource in the middle of the ordered resources, Plone had to split up the merged resources in separate ones which immediately generated additional requests.</p>
+<p>The old way to add these resources to the registry was by registering them with Generic Setup using <tt class="docutils literal"><span class="pre">jsregistry.xml</span></tt> and <tt class="docutils literal"><span class="pre">cssregistry.xml</span></tt> profile files.</p>
+<p>In Plone 5.0, Plone will still recognize these <tt class="docutils literal"><span class="pre">jsregistry.xml</span></tt> and <tt class="docutils literal"><span class="pre">cssregistry.xml</span></tt> files.
+Plone tries to provide a shim for those that are stubborn to migrate.</p>
+<p>Plone does this by adding all <tt class="docutils literal"><span class="pre">jsregistry.xml</span></tt> JavaScripts and <tt class="docutils literal"><span class="pre">cssregistry.xml</span></tt> CSS into a &#8220;plone-legacy&#8221; Resource Registry bundle.</p>
+<p>This bundle simply includes a global jQuery object and includes the resources in sequential order after it.</p>
+</div>
+<div class="section" id="updating-non-amd-scripts">
+<h3><a class="toc-backref" href="#id13">Updating non-AMD scripts</a><a class="headerlink" href="#updating-non-amd-scripts" title="Permalink to this headline">¶</a></h3>
+<p>Updating your existing JavaScript files to make use of RequireJS should be quite easy.
+Just wrap your code into the recipe shown below.
+You can define any dependencies via it&#8217;s RequireJS name identifier.
+Those dependencies are injected into the anonymous function, which follows the dependency list, like shown for jQuery.</p>
+<p>Example:</p>
+<div class="highlight-python"><div class="highlight"><pre>require([
+  &#39;jquery&#39;
+], function($) {
+  &#39;use strict&#39;;
+  ...
+  // All my previous JavaScript file code here
+  ...
+});
+</pre></div>
+</div>
+<p>Then you need to register this resource in the resource registry and add it to a bundle as described above.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">When using <tt class="docutils literal"><span class="pre">require</span></tt> instead of <tt class="docutils literal"><span class="pre">define</span></tt>, the anonymous function is immediately called.
+If you would use <tt class="docutils literal"><span class="pre">define</span></tt> instead, you&#8217;d have to make a <tt class="docutils literal"><span class="pre">require</span></tt> call somewhere, with the dependency to your resource.</p>
+</div>
+</div>
+<div class="section" id="usage-of-define-and-require-and-the-mismatched-anonymous-define-error">
+<h3><a class="toc-backref" href="#id14">Usage of <tt class="docutils literal"><span class="pre">define</span></tt> and <tt class="docutils literal"><span class="pre">require</span></tt> and the <tt class="docutils literal"><span class="pre">mismatched</span> <span class="pre">anonymous</span> <span class="pre">define</span></tt> error</a><a class="headerlink" href="#usage-of-define-and-require-and-the-mismatched-anonymous-define-error" title="Permalink to this headline">¶</a></h3>
+<p>When working with RequireJS, you&#8217;ll likely be aware of the <a class="reference external" href="http://requirejs.org/docs/errors.html#mismatch">mismatched anonymous define()</a> potential misuse of require and define.</p>
+<p>Basically it comes down to, that you should not use <tt class="docutils literal"><span class="pre">define</span></tt> with script tags - code that is rendered without being loaded via RequireJS <tt class="docutils literal"><span class="pre">require</span></tt> calls.
+<tt class="docutils literal"><span class="pre">define</span></tt> should only be included in a page by using a <tt class="docutils literal"><span class="pre">require</span></tt> call.</p>
+<p>Applied to the concept of resources and bundles this means, that bundles should _only_ ever be <tt class="docutils literal"><span class="pre">require</span></tt> calls.
+If you try to use a JavaScript file that has a <tt class="docutils literal"><span class="pre">define</span></tt> call with a bundle, you&#8217;ll likely get the previously mentioned error.
+Make sure to use a JavaScript file with a <tt class="docutils literal"><span class="pre">require</span></tt> call to include all your <tt class="docutils literal"><span class="pre">define</span></tt> resources.</p>
+<p>This is just how RequireJS works and is normal behavior.
+Being aware of this saves you some headache.</p>
+</div>
+<div class="section" id="including-non-requirejs-scripts-in-a-diazo-theme">
+<h3><a class="toc-backref" href="#id15">Including non-RequireJS scripts in a Diazo theme</a><a class="headerlink" href="#including-non-requirejs-scripts-in-a-diazo-theme" title="Permalink to this headline">¶</a></h3>
+<p>We already described how to add resources to the legacy bundle and that the legacy bundle unsets the <tt class="docutils literal"><span class="pre">define</span></tt> and <tt class="docutils literal"><span class="pre">require</span></tt> statements.</p>
+<p>If you have scripts in your Diazo theme, that you just don&#8217;t want to register with the resource registry and which are not compatible with RequireJS, you can add those below the Plone scripts and unset <tt class="docutils literal"><span class="pre">define</span></tt> and <tt class="docutils literal"><span class="pre">require</span></tt> yourself.</p>
+<p>Example:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;before</span> <span class="na">theme=</span><span class="s">&quot;/html/head/script[1]&quot;</span><span class="nt">&gt;</span>    <span class="c">&lt;!-- ... before your own scripts --&gt;</span>
+    <span class="nt">&lt;xsl:apply-templates</span> <span class="na">select=</span><span class="s">&quot;/html/head/script&quot;</span> <span class="nt">/&gt;</span>    <span class="c">&lt;!-- include the Plone scripts --&gt;</span>
+    <span class="nt">&lt;script&gt;</span>    <span class="c">&lt;!-- and unset require and define --&gt;</span>
+        require = undefined
+        define = undefined
+    <span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/before&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="mockup.html" class="btn btn-neutral float-right" title="5. Mockup - A Patternslib based collection of components"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="requirejs-modules.html" class="btn btn-neutral" title="3. RequireJS and JavaScript modules"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright The text and illustrations in this website are licensed by the Plone Foundation under a Creative Commons Attribution 4.0 International license..
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.2.5a',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .admonition-title").show();
+        $(".toggle .admonition-title").click(function() {
+            $(this).parent().children().not(".admonition-title").toggle(400);
+            $(this).parent().children(".admonition-title").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

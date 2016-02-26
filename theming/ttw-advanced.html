@@ -1,0 +1,366 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>2. TTW advanced: intro to Diazo Theming, build custom rules through the web &mdash; Mastering Plone 1.2.5a documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../about.html"/>
+    <link rel="top" title="Mastering Plone 1.2.5a documentation" href="../index.html"/>
+        <link rel="up" title="11. Mastering Plone 5: Theming" href="index.html"/>
+        <link rel="next" title="3. Make it reproducible basic: static theme" href="static-theme.html"/>
+        <link rel="prev" title="1. Basic: customizing logo and CSS of default theme" href="basic.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Mastering Plone
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.2.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About Mastering Plone</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">2. Installation &amp; Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plone_training_config/instructions.html">3. Installing Plone for the Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../anatomy.html">4. The Anatomy of Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../case.html">5. The Case Study</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../features.html">6. The Features of Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plone5.html">7. What&#8217;s New in Plone 5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuring_customizing.html">8. Configuring and Customizing Plone &#8220;Through The Web&#8221;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../extending.html">9. Extending Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../add-ons.html">10. Extend Plone With Add-On Packages</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">11. Mastering Plone 5: Theming</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="basic.html">1. Basic: customizing logo and CSS of default theme</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">2. TTW advanced: intro to Diazo Theming, build custom rules through the web</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#copy-barceloneta-theme">Copy barceloneta theme</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#anatomy-of-a-diazo-theme">Anatomy of a Diazo theme</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#custom-rules">Custom rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#customize-css">Customize CSS</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="static-theme.html">3. Make it reproducible basic: static theme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="theme-package.html">4. Create a Plone theme python package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="creating-customizing-templates.html">5. Creating and customizing Plone templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="creating-initial-content-for-the-theme.html">6. Creating initial content for the theme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tinymce-templates.html">7. Using TinyMCE templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="adv-resource-registry.html">8. Advanced resources registry usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="adv-diazo.html">9. Advanced Diazo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="collective-jbot.html">10. Customize template on the fly: collective.jbot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="custom-components.html">11. Creating custom components</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../javascript/index.html">JavaScript for Plone Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dexterity.html">12. Dexterity I: &#8220;Through The Web&#8221;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../buildout_1.html">13. Buildout I</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eggs1.html">14. Write Your Own Add-Ons to Customize Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../export_code.html">15. Return to Dexterity: Moving contenttypes into Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../views_1.html">16. Views I</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zpt.html">17. Page Templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zpt_2.html">18. Customizing Existing Templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../views_2.html">19. Views II: A Default View for &#8220;Talk&#8221;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../views_3.html">20. Views III: A Talk List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testing.html">21. Testing in Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../behaviors_1.html">22. Behaviors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../viewlets_1.html">23. Writing Viewlets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">24. Programming Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ide.html">25. IDEs and Editors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dexterity_2.html">26. Dexterity Types II: Growing Up</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../custom_search.html">27. Custom Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../events.html">28. Turning Talks into Events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_generated_content.html">29. User Generated Content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources.html">30. Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../thirdparty_behaviors.html">31. Using Third-Party Behaviors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dexterity_3.html">32. Dexterity Types III: Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../relations.html">33. Relations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../registry.html">34. Storing Settings in the Registry and create control-panels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eggs2.html">35. Creating Reusable Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../behaviors_2.html">36. More Complex Behaviors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../viewlets_2.html">37. A Viewlet for the Votable Behavior</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reusable.html">38. Making Our Package Reusable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../embed.html">39. Using starzel.votable_behavior in ploneconf.site</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../deployment_code.html">40. Releasing Your Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../deployment_sites.html">41. Buildout II: Getting Ready for Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../frontpage.html">42. Creating a Dynamic Front Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../future_of_plone.html">43. The Future of Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../optional.html">44. Optional</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../CHANGES.html">Changelog</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Mastering Plone</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">11. Mastering Plone 5: Theming</a> &raquo;</li>
+      
+    <li>2. TTW advanced: intro to Diazo Theming, build custom rules through the web</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ttw-advanced-intro-to-diazo-theming-build-custom-rules-through-the-web">
+<h1>2. TTW advanced: intro to Diazo Theming, build custom rules through the web<a class="headerlink" href="#ttw-advanced-intro-to-diazo-theming-build-custom-rules-through-the-web" title="Permalink to this headline">¶</a></h1>
+<p>A Plone theme takes uses <code class="docutils literal"><span class="pre">Diazo</span></code> techonology to make theming easier.</p>
+<p>You can find extended information about Diazo and its integration package <code class="docutils literal"><span class="pre">plone.app.theming</span></code> in the official docs: <a class="reference external" href="http://docs.diazo.org/en/latest/">Diazo docs</a>
+and <a class="reference external" href="http://docs.plone.org/external/plone.app.theming/docs/index.html#what-is-a-diazo-theme">plone.app.theming docs</a>.</p>
+<p>For this part of the training you just need to know the basic principles of a Diazo theme:</p>
+<ul class="simple">
+<li>Plone renders the content of the page;</li>
+<li>Diazo rules inject the content into any static theme;</li>
+</ul>
+<div class="section" id="copy-barceloneta-theme">
+<h2>Copy barceloneta theme<a class="headerlink" href="#copy-barceloneta-theme" title="Permalink to this headline">¶</a></h2>
+<p>To create our playground we will copy the existing Barceloneta theme.</p>
+<ol class="arabic simple">
+<li>go the &#8220;Theming&#8221; control panel</li>
+<li>you will see the available themes. In a bare new Plone site, you will see something like this:</li>
+</ol>
+<img alt="../_images/theming-bare_plone_themes_list.png" class="align-center" src="../_images/theming-bare_plone_themes_list.png" />
+<ol class="arabic simple" start="3">
+<li>click on the &#8220;copy&#8221; button and get to the copy form</li>
+<li>insert &#8220;My theme&#8221; as the name and activate it by default</li>
+</ol>
+<img alt="../_images/theming-copy_theme_form.png" class="align-center" src="../_images/theming-copy_theme_form.png" />
+<ol class="arabic simple" start="5">
+<li>click on create and you get redirected to your new theme&#8217;s inspector:</li>
+</ol>
+<img alt="../_images/theming-just_copied_theme_inspector.png" class="align-center" src="../_images/theming-just_copied_theme_inspector.png" />
+</div>
+<div class="section" id="anatomy-of-a-diazo-theme">
+<h2>Anatomy of a Diazo theme<a class="headerlink" href="#anatomy-of-a-diazo-theme" title="Permalink to this headline">¶</a></h2>
+<p>The most important files:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">manifest.cfg</span></code>: contains metadata about the theme (<a class="reference external" href="http://docs.plone.org/external/plone.app.theming/docs/index.html#the-manifest-file">manifest reference</a>);</li>
+<li><code class="docutils literal"><span class="pre">rules.xml</span></code>: contains the theme rules (<a class="reference external" href="http://docs.plone.org/external/plone.app.theming/docs/index.html#rules-syntax">rules reference</a>);</li>
+<li><code class="docutils literal"><span class="pre">index.html</span></code>: the static HTML of the theme.</li>
+</ul>
+</div>
+<div class="section" id="custom-rules">
+<h2>Custom rules<a class="headerlink" href="#custom-rules" title="Permalink to this headline">¶</a></h2>
+<p>Let&#8217;s open <code class="docutils literal"><span class="pre">rules.xml</span></code>. You will see all the rules that are used in Barceloneta theme right now. For the time being let&#8217;s concentrate on how to hack these rules.</p>
+<p>Suppose that we want to make the &#8220;above content&#8221; block (the one that contains breadcrumbs) conditional, and show it only for authenticated users and PUT HERE ANOTHER EXAMPLE (?).</p>
+<p>Find this line:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;replace</span> <span class="na">css:content=</span><span class="s">&quot;#viewlet-above-content&quot;</span> <span class="na">css:theme=</span><span class="s">&quot;#above-content&quot;</span> <span class="nt">/&gt;</span>
+</pre></div>
+</div>
+<p>This rule states that the element that come from the content (Plone) with the id <cite>#viewlet-above-content</cite> must replace the element with the id <cite>#above-content</cite> in the static theme.</p>
+<p>We want to hide it for anynoymous users so we can take advantage of the base CSS classes the Plone exposes on the body (SHOW THE CLASSES).</p>
+<p>The class we are looking for is <cite>userrole-authenticated</cite>. Add another property to the rule so that we produce this code:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;replace</span>
+    <span class="na">css:if-content=</span><span class="s">&quot;body.userrole-authenticated&quot;</span>
+    <span class="na">css:content=</span><span class="s">&quot;#viewlet-above-content&quot;</span>
+    <span class="na">css:theme=</span><span class="s">&quot;#above-content&quot;</span> <span class="nt">/&gt;</span>
+</pre></div>
+</div>
+<p>The attribute <cite>css:if-content</cite> allows us to put a condition on the rules based on a CSS selector that acts on the content. In this way the rule will be applied only if the body element has the class <cite>.userrole-authenticated</cite>.</p>
+<p>MORE EXAMPLES HERE?</p>
+</div>
+<div class="section" id="customize-css">
+<h2>Customize CSS<a class="headerlink" href="#customize-css" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>from theme editor open the file <cite>less/barceloneta.plone.less</cite>, that is the main LESS file as specified in the manifest;</li>
+<li>add your own customization at the bottom, like:</li>
+</ol>
+<div class="highlight-css"><div class="highlight"><pre><span class="nt">body</span><span class="p">{</span> <span class="k">background-color</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span> <span class="k">font-size</span><span class="o">:</span> <span class="m">18px</span> <span class="p">;}</span><span class="o">;</span>
+</pre></div>
+</div>
+<p><em>Note: normally you would place this in a separate file to keep the main one clean but for this example is enough.</em></p>
+<ol class="arabic simple" start="3">
+<li>push the button &#8220;Build CSS&#8221;</li>
+</ol>
+<img alt="../_images/theming-editor_compile_css.png" class="align-center" src="../_images/theming-editor_compile_css.png" />
+<ol class="arabic simple" start="4">
+<li>go back to the plone site and reload the page: voilá!</li>
+</ol>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">At the moment you need to &#8220;Build CSS&#8221; from the main file, the one declared in the manifest (in this case <cite>less/barceloneta.plone.less</cite>). So, whatever LESS file you edit, go back to the main one to compile. This behavior will be improved but for now, just remember this simple rule ;)</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="static-theme.html" class="btn btn-neutral float-right" title="3. Make it reproducible basic: static theme" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="basic.html" class="btn btn-neutral" title="1. Basic: customizing logo and CSS of default theme" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright The text and illustrations in this website are licensed by the Plone Foundation under a Creative Commons Attribution 4.0 International license..
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.2.5a',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .admonition-title").show();
+        $(".toggle .admonition-title").click(function() {
+            $(this).parent().children().not(".admonition-title").toggle(400);
+            $(this).parent().children(".admonition-title").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

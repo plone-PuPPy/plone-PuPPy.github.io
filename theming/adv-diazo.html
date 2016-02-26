@@ -1,0 +1,394 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>9. Advanced Diazo &mdash; Mastering Plone 1.2.5a documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../about.html"/>
+    <link rel="top" title="Mastering Plone 1.2.5a documentation" href="../index.html"/>
+        <link rel="up" title="11. Mastering Plone 5: Theming" href="index.html"/>
+        <link rel="next" title="10. Customize template on the fly: collective.jbot" href="collective-jbot.html"/>
+        <link rel="prev" title="8. Advanced resources registry usage" href="adv-resource-registry.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Mastering Plone
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.2.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About Mastering Plone</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">2. Installation &amp; Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plone_training_config/instructions.html">3. Installing Plone for the Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../anatomy.html">4. The Anatomy of Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../case.html">5. The Case Study</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../features.html">6. The Features of Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plone5.html">7. What&#8217;s New in Plone 5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuring_customizing.html">8. Configuring and Customizing Plone &#8220;Through The Web&#8221;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../extending.html">9. Extending Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../add-ons.html">10. Extend Plone With Add-On Packages</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">11. Mastering Plone 5: Theming</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="basic.html">1. Basic: customizing logo and CSS of default theme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ttw-advanced.html">2. TTW advanced: intro to Diazo Theming, build custom rules through the web</a></li>
+<li class="toctree-l2"><a class="reference internal" href="static-theme.html">3. Make it reproducible basic: static theme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="theme-package.html">4. Create a Plone theme python package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="creating-customizing-templates.html">5. Creating and customizing Plone templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="creating-initial-content-for-the-theme.html">6. Creating initial content for the theme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tinymce-templates.html">7. Using TinyMCE templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="adv-resource-registry.html">8. Advanced resources registry usage</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">9. Advanced Diazo</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#modify-the-theme-and-the-content-on-the-fly">Modify the theme and the content on the fly</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#extend-rules">Extend rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#include-external-content">Include external content</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#recipes-and-snippets">Recipes and snippets</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#more-snippets">More snippets</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="collective-jbot.html">10. Customize template on the fly: collective.jbot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="custom-components.html">11. Creating custom components</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../javascript/index.html">JavaScript for Plone Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dexterity.html">12. Dexterity I: &#8220;Through The Web&#8221;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../buildout_1.html">13. Buildout I</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eggs1.html">14. Write Your Own Add-Ons to Customize Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../export_code.html">15. Return to Dexterity: Moving contenttypes into Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../views_1.html">16. Views I</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zpt.html">17. Page Templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zpt_2.html">18. Customizing Existing Templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../views_2.html">19. Views II: A Default View for &#8220;Talk&#8221;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../views_3.html">20. Views III: A Talk List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testing.html">21. Testing in Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../behaviors_1.html">22. Behaviors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../viewlets_1.html">23. Writing Viewlets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">24. Programming Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ide.html">25. IDEs and Editors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dexterity_2.html">26. Dexterity Types II: Growing Up</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../custom_search.html">27. Custom Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../events.html">28. Turning Talks into Events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_generated_content.html">29. User Generated Content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources.html">30. Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../thirdparty_behaviors.html">31. Using Third-Party Behaviors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dexterity_3.html">32. Dexterity Types III: Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../relations.html">33. Relations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../registry.html">34. Storing Settings in the Registry and create control-panels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eggs2.html">35. Creating Reusable Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../behaviors_2.html">36. More Complex Behaviors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../viewlets_2.html">37. A Viewlet for the Votable Behavior</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reusable.html">38. Making Our Package Reusable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../embed.html">39. Using starzel.votable_behavior in ploneconf.site</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../deployment_code.html">40. Releasing Your Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../deployment_sites.html">41. Buildout II: Getting Ready for Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../frontpage.html">42. Creating a Dynamic Front Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../future_of_plone.html">43. The Future of Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../optional.html">44. Optional</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../CHANGES.html">Changelog</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Mastering Plone</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">11. Mastering Plone 5: Theming</a> &raquo;</li>
+      
+    <li>9. Advanced Diazo</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="advanced-diazo">
+<h1>9. Advanced Diazo<a class="headerlink" href="#advanced-diazo" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><strong>&#8220;Diazo allows you to apply a theme contained in a static HTML web page to a dynamic website created using any server-side technology.&#8221;</strong></div></blockquote>
+<p>To do this diazo do some real complicated stuff on your behalf: it writes XSLT!</p>
+<p>But sometimes basic rules are not enough and you need to write a bit of XLST your self.</p>
+<div class="section" id="modify-the-theme-and-the-content-on-the-fly">
+<h2>Modify the theme and the content on the fly<a class="headerlink" href="#modify-the-theme-and-the-content-on-the-fly" title="Permalink to this headline">¶</a></h2>
+<p>Let&#8217;s see some example from the <a class="reference external" href="http://docs.diazo.org/en/latest/advanced.html#modifying-the-theme-on-the-fly">official diazo docs</a>.</p>
+</div>
+<div class="section" id="extend-rules">
+<h2>Extend rules<a class="headerlink" href="#extend-rules" title="Permalink to this headline">¶</a></h2>
+<p>You can <a class="reference external" href="http://docs.diazo.org/en/latest/advanced.html#xinclude">re-use or extend rules</a> from another theme or from another file in your theme.</p>
+<p>A good example of a use case is the one described by <a class="reference external" href="https://twitter.com/datakurre">Asko Soukka</a>  (thanks!!!) in this blog post about <a class="reference external" href="http://datakurre.pandala.org/2015/05/customize-plone-5-default-theme-on-fly.html">how to  Customize Plone 5 default theme on the fly</a>.</p>
+</div>
+<div class="section" id="include-external-content">
+<h2>Include external content<a class="headerlink" href="#include-external-content" title="Permalink to this headline">¶</a></h2>
+<p>You can <a class="reference external" href="http://docs.diazo.org/en/latest/advanced.html#including-external-content">include external content</a> from another website or from a custom view.</p>
+</div>
+<div class="section" id="recipes-and-snippets">
+<h2>Recipes and snippets<a class="headerlink" href="#recipes-and-snippets" title="Permalink to this headline">¶</a></h2>
+<p>The docs provide <a class="reference external" href="http://docs.diazo.org/en/latest/recipes/index.html">a basic recipe set</a> and you can have your own, but how to remember and re-use them?</p>
+<p><a class="reference external" href="http://blog.dbain.com/2014/12/introducing-diazo-snippets-library.html">David Bain introduces a &#8220;diazo snippets library&#8221;</a> that allows you to get snippets from a chrome extensions. <a class="reference external" href="http://pigeonflight.github.io/lessArcane/">All the snippets are available here</a>.</p>
+<div class="section" id="more-snippets">
+<h3>More snippets<a class="headerlink" href="#more-snippets" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="make-some-links-open-in-new-window">
+<h4>Make some links open in new window<a class="headerlink" href="#make-some-links-open-in-new-window" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-xml"><div class="highlight"><pre><span class="c">&lt;!-- add target=&quot;_blank&quot; to all links in portlet-collection-links --&gt;</span>
+<span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;//dl[contains(@class,&#39;portlet-collection-links&#39;)]//a&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">target=</span><span class="s">&quot;_blank&quot;</span><span class="nt">&gt;&lt;xsl:apply-templates</span> <span class="na">select=</span><span class="s">&quot;./@*[contains(&#39; href title class rel &#39;, concat(&#39; &#39;, name(), &#39; &#39;))]&quot;</span><span class="nt">/&gt;&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;.&quot;</span> <span class="nt">/&gt;&lt;/a&gt;</span>
+<span class="nt">&lt;/xsl:template&gt;</span>
+</pre></div>
+</div>
+<p>At diazo.org is another way described in the recipes: <a class="reference external" href="http://docs.diazo.org/en/latest/recipes/adding-an-attribute/index.html">http://docs.diazo.org/en/latest/recipes/adding-an-attribute/index.html</a></p>
+</div>
+<div class="section" id="add-css-marker-classes-depending-on-existing-portal-columns">
+<h4>Add CSS marker classes depending on existing portal-columns<a class="headerlink" href="#add-css-marker-classes-depending-on-existing-portal-columns" title="Permalink to this headline">¶</a></h4>
+<p>This adds a CSS class for every existing portal-column to the body tag. If portal-column-one exist we add col-one, if portal-column-content exsists we add col-content and if portal-column-two exists we add col-two.</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;before</span> <span class="na">theme-children=</span><span class="s">&quot;/html/body&quot;</span> <span class="na">method=</span><span class="s">&quot;raw&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;xsl:attribute</span> <span class="na">name=</span><span class="s">&quot;class&quot;</span><span class="nt">&gt;&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;/html/body/@class&quot;</span> <span class="nt">/&gt;&lt;xsl:if</span> <span class="na">css:test=</span><span class="s">&quot;#portal-column-one&quot;</span><span class="nt">&gt;</span> col-one<span class="nt">&lt;/xsl:if&gt;&lt;xsl:if</span> <span class="na">css:test=</span><span class="s">&quot;#portal-column-content&quot;</span><span class="nt">&gt;</span> col-content<span class="nt">&lt;/xsl:if&gt;&lt;xsl:if</span> <span class="na">css:test=</span><span class="s">&quot;#portal-column-two&quot;</span><span class="nt">&gt;</span> col-two<span class="nt">&lt;/xsl:if&gt;&lt;/xsl:attribute&gt;</span>
+<span class="nt">&lt;/before&gt;</span>
+</pre></div>
+</div>
+<p>Now one can use these markers to define the grid in a semantic way like this:</p>
+<div class="highlight-css"><div class="highlight"><pre>body.col-one.col-content.col-two #content-wrapper {
+  .make-row();
+
+  #portal-column-content {
+    .make-lg-column(6);
+    .make-lg-column-offset(3);
+  }
+
+  #portal-column-one {
+    .make-lg-column(3);
+    .make-lg-column-pull(9);
+  }
+
+  #portal-column-two {
+    .make-lg-column(3);
+  }
+}
+body.col-content #content-wrapper {
+  .make-row();
+
+  #portal-column-content {
+    .make-lg-column(12);
+  }
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="move-plone-elements-around">
+<h4>Move plone elements around<a class="headerlink" href="#move-plone-elements-around" title="Permalink to this headline">¶</a></h4>
+<p>Sometimes one need to move Plone elements from one place to another or merge some elements together. In the following example we merge the language flags together with the document actions.</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;replace</span> <span class="na">css:content-children=</span><span class="s">&quot;.documentActions &gt; ul&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;//*[@class=&#39;documentActions&#39;]/ul/li&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xsl:copy-of</span> <span class="na">select=</span><span class="s">&quot;.&quot;</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;/xsl:for-each&gt;</span>
+  <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;//*[@id=&#39;portal-languageselector&#39;]/*&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xsl:copy-of</span> <span class="na">select=</span><span class="s">&quot;.&quot;</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;/xsl:for-each&gt;</span>
+<span class="nt">&lt;/replace&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="taking-over-specific-portlets">
+<h4>Taking over specific portlets<a class="headerlink" href="#taking-over-specific-portlets" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-xml"><div class="highlight"><pre><span class="c">&lt;!-- all portal-column-two portlets but not portletNews and not portletEvents --&gt;</span>
+<span class="nt">&lt;after</span>
+  <span class="na">content=</span><span class="s">&quot;//div[@id=&#39;portal-column-two&#39;]//dl[not(contains(@class,&#39;portletNews&#39;)) and not(contains(@class,&#39;portletEvents&#39;))]&quot;</span>
+  <span class="na">css:theme-children=</span><span class="s">&quot;#portal-column-two&quot;</span>
+  <span class="nt">/&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-xml"><div class="highlight"><pre><span class="c">&lt;!-- all portal-column-one portlets but not portletNavigationTree --&gt;</span>
+<span class="nt">&lt;after</span>
+  <span class="na">content=</span><span class="s">&quot;//div[@id=&#39;portal-column-one&#39;]//dl[not(contains(@class,&#39;portletNavigationTree&#39;))]&quot;</span>
+  <span class="na">css:theme-children=</span><span class="s">&#39;#portal-column-two&#39;</span>
+  <span class="nt">/&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="collective-jbot.html" class="btn btn-neutral float-right" title="10. Customize template on the fly: collective.jbot" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="adv-resource-registry.html" class="btn btn-neutral" title="8. Advanced resources registry usage" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright The text and illustrations in this website are licensed by the Plone Foundation under a Creative Commons Attribution 4.0 International license..
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.2.5a',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .admonition-title").show();
+        $(".toggle .admonition-title").click(function() {
+            $(this).parent().children().not(".admonition-title").toggle(400);
+            $(this).parent().children(".admonition-title").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,400 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>3. Installing Plone for the Training &mdash; Mastering Plone 1.2.5a documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="../about.html"/>
+    <link rel="top" title="Mastering Plone 1.2.5a documentation" href="../index.html"/>
+        <link rel="next" title="4. The Anatomy of Plone" href="../anatomy.html"/>
+        <link rel="prev" title="2. Installation &amp; Setup" href="../installation.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Mastering Plone
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.2.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About Mastering Plone</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">2. Installation &amp; Setup</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">3. Installing Plone for the Training</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installing-plone-with-vagrant">Installing Plone with vagrant</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#install-virtualbox">Install VirtualBox</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-and-configure-vagrant">Install and configure Vagrant</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#what-vagrant-does">What Vagrant does</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../anatomy.html">4. The Anatomy of Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../case.html">5. The Case Study</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../features.html">6. The Features of Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../plone5.html">7. What&#8217;s New in Plone 5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuring_customizing.html">8. Configuring and Customizing Plone &#8220;Through The Web&#8221;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../extending.html">9. Extending Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../add-ons.html">10. Extend Plone With Add-On Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../theming/index.html">11. Mastering Plone 5: Theming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../javascript/index.html">JavaScript for Plone Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dexterity.html">12. Dexterity I: &#8220;Through The Web&#8221;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../buildout_1.html">13. Buildout I</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eggs1.html">14. Write Your Own Add-Ons to Customize Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../export_code.html">15. Return to Dexterity: Moving contenttypes into Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../views_1.html">16. Views I</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zpt.html">17. Page Templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../zpt_2.html">18. Customizing Existing Templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../views_2.html">19. Views II: A Default View for &#8220;Talk&#8221;</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../views_3.html">20. Views III: A Talk List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testing.html">21. Testing in Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../behaviors_1.html">22. Behaviors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../viewlets_1.html">23. Writing Viewlets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">24. Programming Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ide.html">25. IDEs and Editors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dexterity_2.html">26. Dexterity Types II: Growing Up</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../custom_search.html">27. Custom Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../events.html">28. Turning Talks into Events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_generated_content.html">29. User Generated Content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resources.html">30. Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../thirdparty_behaviors.html">31. Using Third-Party Behaviors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dexterity_3.html">32. Dexterity Types III: Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../relations.html">33. Relations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../registry.html">34. Storing Settings in the Registry and create control-panels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eggs2.html">35. Creating Reusable Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../behaviors_2.html">36. More Complex Behaviors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../viewlets_2.html">37. A Viewlet for the Votable Behavior</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reusable.html">38. Making Our Package Reusable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../embed.html">39. Using starzel.votable_behavior in ploneconf.site</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../deployment_code.html">40. Releasing Your Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../deployment_sites.html">41. Buildout II: Getting Ready for Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../frontpage.html">42. Creating a Dynamic Front Page</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../future_of_plone.html">43. The Future of Plone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../optional.html">44. Optional</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../CHANGES.html">Changelog</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Mastering Plone</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>3. Installing Plone for the Training</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="installing-plone-for-the-training">
+<span id="instructions-label"></span><h1>3. Installing Plone for the Training<a class="headerlink" href="#installing-plone-for-the-training" title="Permalink to this headline">¶</a></h1>
+<p>Keep in mind that you need a fast internet connection during installation since you&#8217;ll have to download a lot of data!</p>
+<div class="section" id="installing-plone-with-vagrant">
+<h2>Installing Plone with vagrant<a class="headerlink" href="#installing-plone-with-vagrant" title="Permalink to this headline">¶</a></h2>
+<p>In order not to waste too much time with installing and debugging the differences between systems, we use a virtual machine (Ubuntu 14.04) to run Plone during the training. We rely on Vagrant and VirtualBox to give the same development environment to everyone.</p>
+<p><a class="reference external" href="https://www.vagrantup.com">Vagrant</a> is a tool for building complete development environments. We use it together with Oracle’s <a class="reference external" href="https://www.virtualbox.org">VirtualBox</a> to create and manage a virtual environment.</p>
+<div class="section" id="install-virtualbox">
+<span id="id1"></span><h3>Install VirtualBox<a class="headerlink" href="#install-virtualbox" title="Permalink to this headline">¶</a></h3>
+<p>Vagrant uses Oracle’s VirtualBox to create virtual environments. Here is a link directly to the download page: <a class="reference external" href="https://www.virtualbox.org/wiki/Downloads">https://www.virtualbox.org/wiki/Downloads</a>. We use VirtualBox 4.3.x</p>
+</div>
+<div class="section" id="install-and-configure-vagrant">
+<span id="instructions-configure-vagrant-label"></span><h3>Install and configure Vagrant<a class="headerlink" href="#install-and-configure-vagrant" title="Permalink to this headline">¶</a></h3>
+<p>Get the latest version from <a class="reference external" href="http://www.vagrantup.com/downloads">http://www.vagrantup.com/downloads</a> for your operating system and install it.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In Windows there is a bug in the recent version of Vagrant. Here are the instructions for how to work around the warning <code class="docutils literal"><span class="pre">Vagrant</span> <span class="pre">could</span> <span class="pre">not</span> <span class="pre">detect</span> <span class="pre">VirtualBox!</span> <span class="pre">Make</span> <span class="pre">sure</span> <span class="pre">VirtualBox</span> <span class="pre">is</span> <span class="pre">properly</span> <span class="pre">installed</span></code>.</p>
+</div>
+<p>Now your system has a command <code class="docutils literal"><span class="pre">vagrant</span></code> that you can run in the terminal.</p>
+<p>First, create a directory in which you want to do the training.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>mkdir training
+<span class="nv">$ </span><span class="nb">cd </span>training
+</pre></div>
+</div>
+<p>Setup Vagrant to automatically install the current guest additions. You can choose to skip this step if you encounter any problems with it.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>vagrant plugin install vagrant-vbguest
+</pre></div>
+</div>
+<p>Now download <a class="reference download internal" href="../_downloads/plone_training_config.zip"><code class="xref download docutils literal"><span class="pre">plone_training_config.zip</span></code></a> and copy its contents into your training directory.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>wget https://raw.githubusercontent.com/plone-PuPPy/training/master/_static/plone_training_config.zip
+<span class="nv">$ </span>unzip plone_training_config.zip
+</pre></div>
+</div>
+<p>The training directory should now hold the file <code class="docutils literal"><span class="pre">Vagrantfile</span></code> and the directory <code class="docutils literal"><span class="pre">manifests</span></code> which again contains several files.</p>
+<p>Now start setting up the VM that is configured in <code class="docutils literal"><span class="pre">Vagrantfile</span></code>:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>vagrant up
+</pre></div>
+</div>
+<p>This takes a <strong>veeeeery loooong time</strong> (between 10 minutes and 1h depending on your internet connection and system speed) since it does all the following steps:</p>
+<ul class="simple">
+<li>downloads a virtual machine (Official Ubuntu Server 14.04 LTS, also called &#8220;Trusty Tahr&#8221;)</li>
+<li>sets up the VM</li>
+<li>updates the VM</li>
+<li>installs various system-packages needed for Plone development</li>
+<li>downloads and unpacks the buildout-cache to get all the eggs for Plone</li>
+<li>clones the coredev buildout into /vagrant/buildout</li>
+<li>builds Plone using the eggs from the buildout-cache</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Sometimes this stops with the message:</p>
+<div class="highlight-bash"><div class="highlight"><pre>Skipping because of failed dependencies
+</pre></div>
+</div>
+<p>If this happens or you have the feeling that something has gone wrong and the installation has not finished correctly for some reason you need to run the following command to repeat the process. This will only repeat steps that have not finished correctly.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>vagrant provision
+</pre></div>
+</div>
+<p class="last">You can do this multiple times to fix problems, e.g. if your network connection was down and steps could not finish because of this.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>If while bringing vagrant up you get an error similar to:</p>
+<div class="highlight-bash"><div class="highlight"><pre>ssh_exchange_identification: <span class="nb">read</span>: Connection reset by peer
+</pre></div>
+</div>
+<p class="last">The configuration may have stalled out because your computer&#8217;s BIOS requires virtualization to be enabled. Check with your computer&#8217;s manufacturer on how to properly enable virtualization.  See: <a class="reference external" href="https://teamtreehouse.com/community/vagrant-ssh-sshexchangeidentification-read-connection-reset-by-peer">https://teamtreehouse.com/community/vagrant-ssh-sshexchangeidentification-read-connection-reset-by-peer</a></p>
+</div>
+<p>Once Vagrant finishes the provisioning process, you can login to the now running virtual machine.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>vagrant ssh
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you use Windows you&#8217;ll have to login with <a class="reference external" href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html">putty</a>. Connect to <a class="reference external" href="mailto:vagrant&#37;&#52;&#48;127&#46;0&#46;01">vagrant<span>&#64;</span>127<span>&#46;</span>0<span>&#46;</span>01</a> at port 2222. User <strong>and</strong> password are <code class="docutils literal"><span class="pre">vagrant</span></code>.</p>
+</div>
+<p>You are now logged in as the user vagrant in <code class="docutils literal"><span class="pre">/home/vagrant</span></code>. We&#8217;ll do all steps of the training as this user.</p>
+<p>Instead we use our own Plone instance during the training. It is in <code class="docutils literal"><span class="pre">/vagrant/buildout/</span></code>. Start it in foreground with <code class="docutils literal"><span class="pre">./bin/instance</span> <span class="pre">fg</span></code>.</p>
+<div class="highlight-pypy"><div class="highlight"><pre>vagrant@training:~$ cd /vagrant/buildout
+vagrant@training:/vagrant/buildout$ ./bin/instance fg
+2016-02-26 05:50:41 INFO ZServer HTTP server started at Fri Feb 26 05:50:41 2016
+    Hostname: 0.0.0.0
+    Port: 8080
+2016-02-26 05:50:48 INFO ZODB.blob (18746) Blob directory /home/vagrant/var/blobstorage does not exist. Selected `bushy` layout.
+2016-02-26 05:50:48 INFO ZODB.blob (18746) Blob directory &#39;/home/vagrant/var/blobstorage/&#39; does not exist. Created new directory.
+2016-02-26 05:50:48 INFO ZODB.blob (18746) Blob temporary directory &#39;/home/vagrant/var/blobstorage/tmp&#39; does not exist. Created new directory.
+2016-02-26 05:51:00 INFO Plone OpenID system packages not installed, OpenID support not available
+2016-02-26 05:51:06 INFO Zope Ready to handle requests
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>In rare cases when you are using OSX with an UTF-8 character set starting Plone might fail with the following error:</p>
+<div class="highlight-text"><div class="highlight"><pre>ValueError: unknown locale: UTF-8
+</pre></div>
+</div>
+<p>In that case you have to put the localized keyboard and language settings in the .bash_profile of the vagrant user to your locale (like <code class="docutils literal"><span class="pre">en_US.UTF-8</span></code> or <code class="docutils literal"><span class="pre">de_DE.UTF-8</span></code>)</p>
+<div class="last highlight-bash"><div class="highlight"><pre><span class="nb">export </span><span class="nv">LC_ALL</span><span class="o">=</span>en_US.UTF-8
+<span class="nb">export </span><span class="nv">LANG</span><span class="o">=</span>en_US.UTF-8
+</pre></div>
+</div>
+</div>
+<p>Now the Zope instance we&#8217;re using is running. You can stop the running instance anytime using <code class="docutils literal"><span class="pre">ctrl</span> <span class="pre">+</span> <span class="pre">c</span></code>.</p>
+<p>If it doesn&#8217;t, don&#8217;t worry, your shell isn&#8217;t blocked. Type <code class="docutils literal"><span class="pre">reset</span></code> (even if you can&#8217;t see the prompt) and press RETURN, and it should become visible again.</p>
+<p>If you point your local browser at <a class="reference external" href="http://localhost:8080">http://localhost:8080</a> you see that Plone is running in vagrant. This works because VirtualBox forwards the port 8080 from the guest system (the vagrant Ubuntu) to the host system (your normal operating system). Now create a new Plone site by clicking &#8220;Create a new Plone site&#8221;. The username and the password are both &#8220;admin&#8221; (Never do this on a real site!).</p>
+<p>The Buildout for this Plone is in a shared folder.  This means we run it in the vagrant box from <code class="docutils literal"><span class="pre">/vagrant/buildout</span></code> but we can also access it in our own operating system and use our favorite editor. You will find the directory <code class="docutils literal"><span class="pre">buildout</span></code> in the directory <code class="docutils literal"><span class="pre">training</span></code> that you created in the very beginning next to <code class="docutils literal"><span class="pre">Vagrantfile</span></code> and <code class="docutils literal"><span class="pre">manifests</span></code>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The database and the python packages are not accessible in your own system since large files cannot make use of symlinks in shared folders. The database lies in <code class="docutils literal"><span class="pre">/home/vagrant/var</span></code>, the python packages are in <code class="docutils literal"><span class="pre">/home/vagrant/packages</span></code>.</p>
+</div>
+<p>If you have any problems or questions please create a ticket at <a class="reference external" href="https://github.com/plone-PuPPy/training/issues">https://github.com/plone-PuPPy/training/issues</a>.</p>
+</div>
+<div class="section" id="what-vagrant-does">
+<span id="instructions-vagrant-does-label"></span><h3>What Vagrant does<a class="headerlink" href="#what-vagrant-does" title="Permalink to this headline">¶</a></h3>
+<p>Installation is done automatically by vagrant and puppet. If you want to know which steps are actually done please see the chapter <a class="reference internal" href="what_vagrant_does.html"><em>What Vagrant is and does</em></a>.</p>
+<div class="admonition note" id="instructions-vagrant-care-handling-label">
+<p class="first admonition-title">Note</p>
+<p><strong>Vagrant Care and Handling</strong></p>
+<p>Keep in mind the following recommendations for using your Vagrant virtualboxes:</p>
+<ul class="last simple">
+<li>Use the <code class="docutils literal"><span class="pre">vagrant</span> <span class="pre">suspend</span></code> or <code class="docutils literal"><span class="pre">vagrant</span> <span class="pre">halt</span></code> commands to put the virtualbox to &#8220;sleep&#8221; or to &#8220;power it off&#8221; before attempting to start another Plone instance anywhere else on your machine, if it uses the same port.  That&#8217;s because vagrant &#8220;reserves&#8221; port 8080, and even if you stopped Plone in vagrant, that port is still in use by the guest OS.</li>
+<li>If you are done with a vagrant box, and want to delete it, always remember to run <code class="docutils literal"><span class="pre">vagrant</span> <span class="pre">destroy</span></code> on it before actually deleting the directory containing it.  Otherwise you&#8217;ll leave its &#8220;ghost&#8221; in the list of boxes managed by vagrant and possibly taking up disk space on your machine.</li>
+<li>See <code class="docutils literal"><span class="pre">vagrant</span> <span class="pre">help</span></code> for all available commands, including <code class="docutils literal"><span class="pre">suspend</span></code>, <code class="docutils literal"><span class="pre">halt</span></code>, <code class="docutils literal"><span class="pre">destroy</span></code>, <code class="docutils literal"><span class="pre">up</span></code>, <code class="docutils literal"><span class="pre">ssh</span></code> and <code class="docutils literal"><span class="pre">resume</span></code>.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../anatomy.html" class="btn btn-neutral float-right" title="4. The Anatomy of Plone" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../installation.html" class="btn btn-neutral" title="2. Installation &amp; Setup" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright The text and illustrations in this website are licensed by the Plone Foundation under a Creative Commons Attribution 4.0 International license..
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.2.5a',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .admonition-title").show();
+        $(".toggle .admonition-title").click(function() {
+            $(this).parent().children().not(".admonition-title").toggle(400);
+            $(this).parent().children(".admonition-title").toggleClass("open");
+        })
+    });
+</script>
+
+
+</body>
+</html>
